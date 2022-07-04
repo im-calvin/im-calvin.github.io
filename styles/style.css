@@ -1,0 +1,96 @@
+html, body {
+  background-color: #505168;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-x: hidden;
+}
+
+.name-text {
+  color: #EAEFD3;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-family: 'Trebuchet MS';
+}
+
+.big-text {
+  width: 100%;
+  color: white;
+  padding-left: 20%;
+  padding-top: 10%;
+}
+
+.bio-text {
+  font-size: 20px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 4px 20px;
+  margin: 4px 2px;
+}
+
+.banner-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  background: none;
+}
+
+.nav-item {
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
+.git-button {
+  cursor: pointer;
+  opacity: 50%;
+  transition-duration: 1s;
+  background-color: transparent;
+}
+
+.git-button:hover {
+  opacity: 100%;
+}
+
+header {
+  overflow: hidden;
+  background-color: #27233A;
+  padding: 5px 8px;
+  border-bottom: 2px solid whitesmoke;
+  font-family: 'Trebuchet MS';
+  position: sticky;
+  top: 0;
+}
+
+.header a{
+  text-align: center;
+  font-size: 16px;
+  float: left;
+  color: white;
+  background-color: inherit;
+  text-underline-offset: 0.2em;
+  /* transition: text-decoration 1s, text-underline-offset 1s; */
+}
+
+.header a.logo {
+  font-weight: bold;
+}
+
+.header-left {
+  float:left;
+}
+
+.header-right {
+  float:right;
+}
