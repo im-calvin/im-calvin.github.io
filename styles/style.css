@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   background-color: #505168;
   margin: 0;
   padding: 0;
@@ -29,7 +30,7 @@ h2 {
   font-size: 20px;
 }
 
-.button {
+button {
   cursor: pointer;
   padding: 4px 20px;
   margin: 4px 2px;
@@ -52,14 +53,19 @@ h2 {
   text-decoration: underline;
 }
 
-.git-button {
+.icon-img {
+  background: transparent;
+}
+
+.icon-button {
   cursor: pointer;
   opacity: 50%;
   transition-duration: 1s;
   background-color: transparent;
+  font-size: 32px;
 }
 
-.git-button:hover {
+.icon-button:hover {
   opacity: 100%;
 }
 
@@ -71,26 +77,21 @@ header {
   font-family: 'Trebuchet MS';
   position: sticky;
   top: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  /* text-align: inline-block; */
 }
 
-.header a{
-  text-align: center;
-  font-size: 16px;
-  float: left;
+
+a.nav-item {
   color: white;
-  background-color: inherit;
+  font-size: 16px;
   text-underline-offset: 0.2em;
-  /* transition: text-decoration 1s, text-underline-offset 1s; */
+  overflow: auto;
 }
 
 .header a.logo {
   font-weight: bold;
-}
-
-.header-left {
-  float:left;
-}
-
-.header-right {
-  float:right;
 }
