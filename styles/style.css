@@ -60,6 +60,7 @@ button {
 .icon-button {
   cursor: pointer;
   opacity: 50%;
+  transition-property: opacity;
   transition-duration: 1s;
   background-color: transparent;
   font-size: 32px;
@@ -77,13 +78,8 @@ header {
   font-family: 'Trebuchet MS';
   position: sticky;
   top: 0;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
   /* text-align: inline-block; */
 }
-
 
 a.nav-item {
   color: white;
@@ -94,4 +90,18 @@ a.nav-item {
 
 .header a.logo {
   font-weight: bold;
+}
+
+.flex-header {
+  display: flex;
+  align-items: center;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
