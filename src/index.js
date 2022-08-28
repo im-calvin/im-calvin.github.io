@@ -1,0 +1,15 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+import './css/home.css';
+import Header from './js/header.js';
+
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <Header />
+    {/* <Body/> */}
+  </StrictMode>
+)
