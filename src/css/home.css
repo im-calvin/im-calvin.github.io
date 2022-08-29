@@ -3,8 +3,8 @@ body {
   background-color: #505168;
   margin: 0;
   padding: 0;
-  border: 0;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .name-text {
@@ -19,11 +19,14 @@ h2 {
   font-family: 'Trebuchet MS';
 }
 
+.main-body {
+  padding-left: 100px;
+  padding-top: 5%;
+}
+
 .big-text {
   width: 100%;
   color: white;
-  padding-left: 20%;
-  padding-top: 10%;
 }
 
 .bio-text {
@@ -74,11 +77,13 @@ header {
   overflow: hidden;
   background-color: #27233A;
   padding: 5px 8px;
-  border-bottom: 2px solid whitesmoke;
+  border-right: 2px solid whitesmoke;
   font-family: 'Trebuchet MS';
-  position: sticky;
+  position: fixed;
   top: 0;
-  /* text-align: inline-block; */
+  left: 0;
+  /* width: 200px; */
+  height: 100%;
 }
 
 a.nav-item {
@@ -95,13 +100,19 @@ a.nav-item {
 .flex-header {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100px;
 }
 
 .banner-content {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .flex-grow {
   flex-grow: 1;
 }
+

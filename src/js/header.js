@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom/client';
+import { Link } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-  </React.StrictMode>
-);
+// import Home from './home.js';
+// import Projects from './projects.js';
 
 export default class Header extends Component {
   render() {
@@ -16,19 +12,21 @@ export default class Header extends Component {
           <div className="flex-header">
             <div className="banner-content">
               <button className="banner-button">
-                <a href="/html/home.html" className="nav-item button logo">Home</a>
+                <Link to="/" className="nav-item button">Home</Link>
               </button>
             </div>
             <div className="flex-grow" />
             <div className="banner-content">
+              {/* <button className="banner-button">
+                <Link to="/about" className="nav-item button">About</Link>
+              </button> */}
               <button className="banner-button">
-                <a href="/html/about.html" className="nav-item button">About</a>
-              </button>
-              <button className="banner-button">
-                <a href="/html/projects.html" className="nav-item button">Projects</a>
+                <Link to="/projects" className="nav-item button">Projects</Link>
               </button>
               <button className="banner-button icon-button git-button">
-                <img className="icon-img" type="image" src="/GitHub-Mark/PNG/Github-Mark-Light-32px.png" onclick="window.open('https://github.com/im-calvin', '_blank')" />
+                <a href="https://github.com/im-calvin" target="_blank" rel="noreferrer">
+                  <img className="icon-img" type="image" src="/GitHub-Mark/PNG/Github-Mark-Light-32px.png" alt='github logo' />
+                </a>
               </button>
               <span className="banner-button icon-button mail-button">
                 <a href="mailto:work.kelvinwong@gmail.com">
