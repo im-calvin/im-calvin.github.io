@@ -1,6 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import React, { Component } from 'react';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import React from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import Header from './js/header';
