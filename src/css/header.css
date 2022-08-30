@@ -7,33 +7,8 @@ body {
 }
 
 html {
-  padding-left: 10%;
-  padding-top: 5%;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.name-color {
-  color: #EAEFD3;
-}
-
-h2 {
-  font-size: 2em;
-  font-weight: 100;
-  letter-spacing: 2px;
-  font-family: 'Trebuchet MS';
-}
-
-.text-body {
-  width: 100%;
-  color: white;
-  font-family: 'Trebuchet';
-}
-
-.small-text {
-  font-size: 20px;
+  margin-left: 12%;
+  margin-top: 5%;
 }
 
 button {
@@ -87,6 +62,8 @@ header {
   left: 0;
   height: 100%;
   opacity: 80%;
+  flex-direction: column;
+  width: 5%;
 }
 
 a.nav-item {
@@ -100,30 +77,19 @@ a.nav-item {
   font-weight: bold;
 }
 
-/* .flex-header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  width: 100px;
-} */
-
 .banner-content {
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-} 
+}
 
 .header-bottom {
   justify-content: flex-end;
-  /* flex-direction: column; */
-  /* align-self: flex-end; */
+  align-items: center;
 }
 
 .flex-grow {
-  flex-grow: 1;
+  flex-grow: 0.95;
 }
 
 .text-box {
@@ -134,7 +100,3 @@ a.nav-item {
 .flex {
   display: flex;
 }
-
-/* .fade {
-
-} */
