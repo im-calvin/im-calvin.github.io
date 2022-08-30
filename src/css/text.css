@@ -1,0 +1,24 @@
+.bold {
+  font-weight: bold;
+}
+
+.name-color {
+  color: #EAEFD3;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-family: 'Trebuchet MS';
+}
+
+.text-body {
+  width: 100%;
+  color: white;
+  font-family: 'Trebuchet';
+}
+
+.small-text {
+  font-size: 20px;
+}
