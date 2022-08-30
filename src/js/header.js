@@ -16,7 +16,7 @@ export default class Header extends Component {
               </button>
             </div>
             <div className="flex-grow" />
-            <div className="banner-content">
+            <div className="banner-content header-bottom">
               {/* <button className="banner-button">
                 <Link to="/about" className="nav-item button">About</Link>
               </button> */}
@@ -33,6 +33,7 @@ export default class Header extends Component {
                   <i className="fa-solid fa-envelope icon-img" />
                 </a>
               </span>
+
             </div>
           </div>
         </nav>
