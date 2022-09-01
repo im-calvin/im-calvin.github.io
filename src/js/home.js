@@ -5,7 +5,7 @@ export default class Home extends Component {
   render() {
     return (
       <AnimatedPage>
-      <section className="text-body main-body">
+      <section className="text-body">
         <h2>
           Hi, I am
           <span className="bold name-color">

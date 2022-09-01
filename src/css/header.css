@@ -6,9 +6,9 @@ body {
   overflow-y: auto;
 }
 
-html {
-  margin-left: 12%;
-  margin-top: 5%;
+.main-body {
+  margin-left: 5%;
+  border-left: 2px;
 }
 
 button {
@@ -44,7 +44,9 @@ button {
   transition-property: opacity;
   transition-duration: 1s;
   background-color: transparent;
-  font-size: 32px;
+  font-size: 2em;
+  height: auto;
+  object-fit: cover;
 }
 
 .icon-button:hover {
@@ -54,7 +56,7 @@ button {
 header {
   overflow: hidden;
   background-color: #27233A;
-  padding: 5px 8px;
+  /* padding: 5px 8px; */
   border-right: 2px solid whitesmoke;
   font-family: 'Trebuchet MS';
   position: fixed;
@@ -68,7 +70,7 @@ header {
 
 a.nav-item {
   color: white;
-  font-size: 16px;
+  font-size: 1.2em;
   text-underline-offset: 0.2em;
   overflow: auto;
 }

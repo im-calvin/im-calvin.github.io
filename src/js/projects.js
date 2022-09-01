@@ -6,7 +6,7 @@ export default class About extends Component {
 
     return (
       <AnimatedPage>
-        <section className="text-body main-body">
+        <section className="text-body">
           <h2>
             Projects :D
           </h2>
