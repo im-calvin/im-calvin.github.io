@@ -3,22 +3,20 @@
 }
 
 .name-color {
-  color: #EAEFD3;
+  color: #ea5d5d;
 }
 
 h2 {
   font-size: 2em;
   font-weight: 100;
   letter-spacing: 2px;
-  font-family: 'Trebuchet MS';
 }
 
 .text-body {
   width: 100%;
-  color: white;
-  font-family: 'Trebuchet';
+  color: #5e4579;
 }
 
 .small-text {
-  font-size: 20px;
+  font-size: 1.2em;
 }

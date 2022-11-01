@@ -6,18 +6,18 @@ export default class About extends Component {
 
     return (
       <AnimatedPage>
-        <section className="text-body main-body">
-          <h2>
-            Projects :D
-          </h2>
-          <div className="small-text">
-            <div className="text-box">
-              <p>
-                big fan. <br />
-                here's some bio text if you wanted :D
-              </p>
-            </div>
+        <section className="text-body flex">
+          <div className="text">
+            <p>
+              Projects :D big fan. here's some bio text if you wanted :D :DDDDDDDDDDDDDDDDDDD
+            </p>
           </div>
+          <div className='text'>
+            <p>
+              new para
+            </p>
+          </div>
+
         </section>
       </AnimatedPage>
     )
