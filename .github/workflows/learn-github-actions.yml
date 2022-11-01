@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - calv-animatedbg
   pull_request:
 
 jobs:
