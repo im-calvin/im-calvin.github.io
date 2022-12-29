@@ -48,6 +48,7 @@ button {
 
 .icon-img {
   background: transparent;
+  width: 2vw;
 }
 
 .icon-button {
@@ -56,7 +57,7 @@ button {
   transition-property: opacity;
   transition-duration: 1s;
   background-color: transparent;
-  font-size: 2em;
+  font-size: 2vw;
   height: auto;
   object-fit: cover;
 }
@@ -64,17 +65,6 @@ button {
 .icon-button:hover {
   opacity: 100%;
 }
-
-/* .header {
-  background: #f7cd64;
-  height: 10%;
-  width: 10%;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 100%;
-  border-bottom-left-radius: 0;
-  top: 0;
-} */
 
 .header {
   overflow: hidden;
@@ -92,7 +82,7 @@ button {
 
 a.nav-item {
   color: #5e4579;
-  font-size: 1.2em;
+  font-size: 0.9vw;
   text-underline-offset: 0.2em;
   overflow: auto;
 }
@@ -103,10 +93,6 @@ a.nav-item {
   flex-direction: column;
 }
 
-.banner-content:hover {
-  flex-direction: column;
-}
-
 .header-bottom {
   justify-content: flex-end;
   align-items: center;
@@ -114,7 +100,7 @@ a.nav-item {
 }
 
 .flex-grow {
-  flex-grow: 0.75;
+  flex-grow: 0.95;
 }
 
 .flex {

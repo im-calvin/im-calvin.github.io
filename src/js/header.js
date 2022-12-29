@@ -19,14 +19,14 @@ export default class Header extends Component {
         </div>
         <div className="flex-grow" />
         <div className="banner-content header-bottom">
+          <span className="banner-button icon-button linkedin-button">
+            <a href="https://www.linkedin.com/in/kelvinhkwong/">
+              <i class="fa-brands fa-linkedin" />
+            </a>
+          </span>
           <button className="banner-button icon-button git-button">
-            <a href="https://github.com/im-calvin" target="_blank" rel="noreferrer">
-              <img
-                className="icon-img"
-                type="image"
-                src="/GitHub-Mark/PNG/GitHub-Mark-32px.png"
-                alt="github logo"
-              />
+            <a href="https://github.com/im-calvin">
+              <i class="fa-brands fa-github" />
             </a>
           </button>
           <span className="banner-button icon-button mail-button">
