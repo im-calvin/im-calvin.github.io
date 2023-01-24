@@ -15,6 +15,11 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   font-family: 'Montserrat';
+  background-image: url("../../public/BG_NO_SUN.png");
+  background-size: 100% 270%;
+  margin-left: '-5%';
+  height: '100vh';
+  /* background-repeat: none; */
 }
 
 .main-body {

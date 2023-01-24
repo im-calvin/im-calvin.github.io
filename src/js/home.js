@@ -18,9 +18,7 @@ export default class Home extends Component {
               here's some bio text if you wanted :D
             </p>
           </div>
-          <div className="skills">
-            
-          </div>
+          <div className="skills"></div>
         </section>
       </AnimatedPage>
     );
