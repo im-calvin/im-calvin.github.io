@@ -31,7 +31,7 @@ h2 {
 }
 
 .accordion {
-  width: 80%;
+  width: calc(100vw - 40vw);
 }
 
 .MuiTypography-body1 {
@@ -39,10 +39,6 @@ h2 {
   overflow: hidden;
 }
 
-.MuiButtonBase-root {
-  background: red;
-}
-
 .MuiAccordionDetails-root {
-  background: red;
+  background: #dbd9dd;
 } 

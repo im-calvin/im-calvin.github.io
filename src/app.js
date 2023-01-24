@@ -1,20 +1,23 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-
-// import React, { useRef } from "react";
+import Stack from "@mui/material/Stack";
 import React from "react";
 
-import Header from "./js/header";
-import Home from "./js/home";
-import Projects from "./js/projects";
+import Header from "./js/components/Header";
+import Home from "./js/Home";
+import Projects from "./js/Projects";
+import Sun from "./js/components/Sun";
+import SimpleGrow from "./js/components/test";
 
-function App() {
+export default function App() {
   const location = useLocation();
   // const ref = useRef();
 
   return (
-    <>
-      <Header />
+    <Stack direction="row">
+      <SimpleGrow />
+      {/* <Sun /> */}
+      {/* <Header /> */}
       <div classNames="main-body">
         <AnimatePresence mode="wait">
           <Routes key={location.pathname} location={location}>
@@ -23,8 +26,6 @@ function App() {
           </Routes>
         </AnimatePresence>
       </div>
-    </>
+    </Stack>
   );
 }
-
-export default App;
