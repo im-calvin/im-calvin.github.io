@@ -6,10 +6,10 @@ export default class Home extends Component {
     return (
       <AnimatedPage>
         <section className="text-body flex">
-          <div className="text">
+          <div className="text home">
             <h2>
               Hi, I am
-              <span className="bold name-color">&nbsp;Calv.</span>
+              <span className="bold name-color">&nbsp;Kelvin Wong.</span>
             </h2>
           </div>
           <div className="text">
@@ -18,8 +18,8 @@ export default class Home extends Component {
               here's some bio text if you wanted :D
             </p>
           </div>
-          <div className="skills">
-            
+          <div className="text skills">
+            <h2>Skills</h2>
           </div>
         </section>
       </AnimatedPage>
