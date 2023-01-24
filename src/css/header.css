@@ -111,15 +111,3 @@ a.nav-item {
 .flex {
   display: flex;
 }
-
-.text-body {
-  margin-left: 10vw;
-  margin-top: 20vh;
-  flex-direction: column;
-}
-
-.text {
-  padding: 5px 8px;
-  max-width: 30vw;
-  letter-spacing: 0.1em;
-}

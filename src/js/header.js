@@ -21,12 +21,12 @@ export default class Header extends Component {
         <div className="banner-content header-bottom">
           <span className="banner-button icon-button linkedin-button">
             <a href="https://www.linkedin.com/in/kelvinhkwong/">
-              <i class="fa-brands fa-linkedin" />
+              <i className="fa-brands fa-linkedin" />
             </a>
           </span>
           <button className="banner-button icon-button git-button">
             <a href="https://github.com/im-calvin">
-              <i class="fa-brands fa-github" />
+              <i className="fa-brands fa-github" />
             </a>
           </button>
           <span className="banner-button icon-button mail-button">
