@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { isMobile } from "react-device-detect";
-import TemporaryDrawer from "./TemporaryDrawer";
+import AnimateHeader from "./AnimateHeader";
 import NavMenu from "./NavMenu";
 
 export default function Header() {
@@ -14,7 +14,6 @@ export default function Header() {
   };
   return (
     <header className="header flex">
-      {/* <TemporaryDrawer /> */}
       <div className="flex-grow-small" />
       <NavMenu />
 
