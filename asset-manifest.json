@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.7bdf57a2.css",
-    "main.js": "/static/js/main.7328e3f8.js",
+    "main.css": "/static/css/main.9f66fbc4.css",
+    "main.js": "/static/js/main.77ab7586.js",
     "static/media/Montserrat-Medium.otf": "/static/media/Montserrat-Medium.4b4a4b36283ebeb2cf89.otf",
     "static/media/Gotham-Black.otf": "/static/media/Gotham-Black.c9e42599a779a72eaadc.otf",
     "static/media/BG_NO_SUN.png": "/static/media/BG_NO_SUN.b8a5653bd81a089c150a.png",
     "index.html": "/index.html",
-    "main.7bdf57a2.css.map": "/static/css/main.7bdf57a2.css.map",
-    "main.7328e3f8.js.map": "/static/js/main.7328e3f8.js.map"
+    "main.9f66fbc4.css.map": "/static/css/main.9f66fbc4.css.map",
+    "main.77ab7586.js.map": "/static/js/main.77ab7586.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bdf57a2.css",
-    "static/js/main.7328e3f8.js"
+    "static/css/main.9f66fbc4.css",
+    "static/js/main.77ab7586.js"
   ]
 }
