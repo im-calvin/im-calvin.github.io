@@ -4,8 +4,9 @@ import React from "react";
 
 export default function ShareButton(props) {
   return (
-    <IconButton size="small" href={props.link}>
+    <IconButton size="small" href={props.link} target="_blank">
       <LaunchIcon fontSize="" />
     </IconButton>
   );
 }
+np
