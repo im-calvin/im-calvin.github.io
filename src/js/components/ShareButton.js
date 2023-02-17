@@ -9,4 +9,3 @@ export default function ShareButton(props) {
     </IconButton>
   );
 }
-np
