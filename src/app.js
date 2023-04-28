@@ -3,10 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import Stack from "@mui/material/Stack";
 import React from "react";
 
-import Header from "./js/components/Header";
+import Header from "./js/navbar/Header";
 import Home from "./js/Home";
-import Projects from "./js/Projects";
-import AnimateHeader from "./js/components/AnimateHeader";
+import Projects from "./js/projects/Projects";
+import AnimateHeader from "./js/navbar/AnimateHeader";
 
 export default function App() {
   const location = useLocation();

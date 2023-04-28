@@ -2,8 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-import './css/header.css';
-import './css/text.css';
+import "./js/navbar/header.css";
+import './text.css';
 import App from './app.js';
 
 const rootElement = document.getElementById('root');

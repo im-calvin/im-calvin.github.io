@@ -47,5 +47,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://im-calvin.github.io"
+  "homepage": "https://im-calvin.github.io",
+  "devDependencies": {
+    "@wixc3/react-board": "2.1.3"
+  }
 }

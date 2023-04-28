@@ -1,7 +1,20 @@
+import { MotionConfig } from "framer-motion";
 import React, { useState } from "react";
 import { isMobile } from "react-device-detect";
 import AnimateHeader from "./AnimateHeader";
 import NavMenu from "./NavMenu";
+import {motion} from 'framer-motion';
+import { MenuToggle } from "./MenuToggle";
+
+
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+  }
+};
 
 export default function Header() {
   const [state, setState] = useState(false);
@@ -13,8 +26,8 @@ export default function Header() {
     }
   };
   return (
+    <motion.div variants={variants}>
     <header className="header flex">
-      <div className="flex-grow-small" />
       <NavMenu />
 
       <div className="flex-grow" />
@@ -36,5 +49,6 @@ export default function Header() {
         </span>
       </div>
     </header>
+    </motion.div>
   );
 }

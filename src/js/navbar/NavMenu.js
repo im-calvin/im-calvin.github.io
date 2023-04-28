@@ -8,27 +8,23 @@ export default function NavMenu(props) {
   return (
     <Grid
       display="grid"
-      gridTemplateColumns="1fr auto"
+      gridTemplateColumns="auto auto"
       gridAutoFlow="row"
       padding={2}
-      alignItems="center"
-      // sx={{ width: 250 }}
-      // role="presentation"
-      // onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
-    >
-      {/* <MenuIcon
-      // onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
-      /> */}
-      <Home />
+      alignItems="center">
+      <Link to="/" className="nav-item button">
+        <Home />
+      </Link>
+
       <button className="banner-button">
         <Link to="/" className="nav-item button">
           HOME
         </Link>
       </button>
 
-      <WorkIcon />
+      <Link to="/projects" className="nav-item button">
+        <WorkIcon />
+      </Link>
       <button className="banner-button">
         <Link to="/projects" className="nav-item button">
           PROJECTS

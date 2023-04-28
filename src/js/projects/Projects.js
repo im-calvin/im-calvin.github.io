@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import AnimatedPage from "./AnimatedPage";
+import AnimatedPage from "../AnimatedPage";
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import ShareButton from "./components/ShareButton";
+import ShareButton from "./ShareButton";
 
 export default class Projects extends Component {
   render() {
