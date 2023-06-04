@@ -1,0 +1,13 @@
+export default function SideEmail() {
+  return (
+    <div className="fixed bottom-0 right-20 flex w-10 flex-col items-center justify-center ">
+      <a
+        style={{ writingMode: "vertical-lr" }}
+        className="relative my-10 inline-block pl-1 no-underline"
+        href="mailto:kelvinwong0519@gmail.com">
+        kelvinwong0519@gmail.com
+      </a>
+      <div className="m-0 h-20 w-px border border-red-500" />
+    </div>
+  );
+}
