@@ -26,34 +26,23 @@ export default function MenuButton() {
     setState(open);
   };
 
-  const menuItem = (text: string, MenuIcon: SvgIconComponent, href: string) => {
-    return (
-      <a href={href}>
-        <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <MenuIcon />
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      </a>
-    );
+  const menuItem = (text: string, href: string) => {
+    return <a href={href}>{text}</a>;
   };
 
   const menu = () => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 400 }}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}>
-      <List>
-        {menuItem("About", Info, "/")}
-        {menuItem("Blog", Article, "/blog")}
-        {menuItem("Projects", GitHub, "/projects")}
-        {/* <div className="grow" /> */}
-        {menuItem("Resume", Description, "/resume.pdf")}
-      </List>
+      <div className="flex flex-col items-center justify-center">
+        {menuItem("About", "/about")}
+        {menuItem("Blog", "/blog")}
+        {menuItem("Projects", "/projects")}
+        <div className="grow" />
+        <ResumeButton />
+      </div>
     </Box>
   );
 
@@ -71,7 +60,13 @@ export default function MenuButton() {
         open={state}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}>
-        {menu()}
+        <div className="flex h-full flex-col items-center justify-center">
+          {menuItem("About", "/about")}
+          {menuItem("Blog", "/blog")}
+          {menuItem("Projects", "/projects")}
+          <div className="grow" />
+          <ResumeButton />
+        </div>
       </SwipeableDrawer>
     </>
   );
