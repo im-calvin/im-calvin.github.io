@@ -2,6 +2,7 @@
 import logo from '../public/calvin.png'
 import MenuButton from './MenuButton'
 import LightSwitch from './LightSwitch'
+import ResumeButton from './ResumeButton'
 ---
 <div class="flex flex-row items-center">
   <a href="/" class="mr-5">
@@ -22,7 +23,5 @@ import LightSwitch from './LightSwitch'
     <MenuButton client:load/>
   </div>
 
-  <a href={'resume.pdf'} target="_blank" class="border border-red-500 p-2 px-3 hover:bg-red-200 hover:transition-all rounded leading-normal text-sm sm:inline-flex hidden">
-    Resume
-  </a>
+  <ResumeButton />
 </div>

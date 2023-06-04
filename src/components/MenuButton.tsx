@@ -8,7 +8,8 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Article, GitHub, Info, SvgIconComponent } from "@mui/icons-material";
+import { Article, Description, GitHub, Info, SvgIconComponent } from "@mui/icons-material";
+import ResumeButton from "./ResumeButton";
 
 export default function MenuButton() {
   const [state, setState] = useState(false);
@@ -50,6 +51,8 @@ export default function MenuButton() {
         {menuItem("About", Info, "/")}
         {menuItem("Blog", Article, "/blog")}
         {menuItem("Projects", GitHub, "/projects")}
+        {/* <div className="grow" /> */}
+        {menuItem("Resume", Description, "/resume.pdf")}
       </List>
     </Box>
   );
