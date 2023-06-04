@@ -47,8 +47,22 @@ export default function SocialList() {
             </svg>
           </a>
         </li>
+        <li className="my-5 transition-transform ease-in-out hover:translate-y-[-3px] focus:translate-y-[-3px]">
+          <a href="/resume.pdf">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 5h16v2H4zm0 4h16v2H4zm0 4h16v2H4zm0 4h16v2H4zm0 4h10v2H4z" />
+            </svg>
+          </a>
+        </li>
       </ul>
-      <div className="m-0 h-20 w-px border border-red-500"/>
+      <div className="m-0 h-20 w-px border border-red-500" />
     </div>
   );
 }
