@@ -42,7 +42,7 @@ const ThemeSwitch = () => {
             </svg>
           </span>
         </span>
-        <span className="mx-2">{isDarkMode ? "🌙" : "☀️"}</span>
+        <span className="mx-2 transition duration-300 ease-in-out">{isDarkMode ? "🌙" : "☀️"}</span>
       </label>
     </div>
   );
