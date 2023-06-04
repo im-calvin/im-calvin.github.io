@@ -1,22 +1,28 @@
 ---
-import logo from '../../public/calvin.png'
+import logo from '../public/calvin.png'
+import MenuButton from './MenuButton'
+import LightSwitch from './LightSwitch'
 ---
 <div class="flex flex-row items-center">
+  <a href="/" class="mr-5">
+    <img src={logo} alt="Logo" class="h-8" />
+  </a>
 
-  <div class="hidden md:inline-flex">
-    <a href="/">Home</a>
+  <div class="hidden sm:inline-flex gap-5">
     <a href="/about">About</a>
     <a href="/projects">Projects</a>
     <a href="/blog">Blog</a>
   </div>
-  <div>
-    <img src={logo} alt="Logo" class="h-8" />
-  </div>
+
   <div class="grow"/>
-  <button class="w-8 h-8 flex flex-col place-content-evenly align-baseline items-end">
-    <div class="border border-red-700 w-8"/>
-    <div class="border border-red-700 w-6"/>
-    <div class="border border-red-700 w-8"/>
-  </button>
-  <!-- <button class="hidden md:inline-flex">Resume</button> -->
+
+  <LightSwitch client:load/>
+
+  <div class="inline-flex sm:hidden">
+    <MenuButton client:load/>
+  </div>
+
+  <a href={'resume.pdf'} target="_blank" class="border border-red-500 p-2 px-3 hover:bg-red-200 hover:transition-all rounded leading-normal text-sm sm:inline-flex hidden">
+    Resume
+  </a>
 </div>
