@@ -1,0 +1,18 @@
+---
+import Navbar from "../components/Navbar.astro";
+import SocialList from "../components/SideSocialList";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`Blog • ${frontmatter.title}`}>
+  <Navbar />
+  <h4>
+    {frontmatter.date}
+  </h4>
+  <h1>
+    {frontmatter.title}
+  </h1>
+  <slot />
+</Layout>
