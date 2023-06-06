@@ -1,13 +1,29 @@
 ---
+import { getCollection } from "astro:content";
+import BlogPreview from "../../components/BlogPreview.astro";
 import Navbar from "../../components/Navbar.astro";
 import Layout from "../../layouts/Layout.astro";
-// glob either md or mdx
-const posts = await Astro.glob("../../content/blog/*.{md, mdx}");
+
+const posts = (
+  await getCollection("blog", ({ data }) => {
+    return data.isDraft !== true;
+  })
+).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Layout title="Blog • Kelvin Wong">
   <Navbar />
-  <h4>Blog</h4>
+  <h1>Blog</h1>
   <h1>A place where I can blab into the void</h1>
-  <!-- TODO: add preview components (hopefully dynamically) -->
+  <ul>
+    {
+      posts.map((post) => (
+        <BlogPreview
+          url={`/blog/${post.slug}`}
+          title={post.data.title}
+          snippet={post.data.snippet}
+        />
+      ))
+    }
+  </ul>
 </Layout>

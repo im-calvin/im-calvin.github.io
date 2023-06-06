@@ -1,3 +1,9 @@
 ---
-
+const { title, url, snippet } = Astro.props;
 ---
+
+<a href={url}>
+  {title}
+</a>
+
+{snippet}

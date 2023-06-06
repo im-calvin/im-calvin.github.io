@@ -2,17 +2,15 @@
 import Navbar from "../components/Navbar.astro";
 import SocialList from "../components/SideSocialList";
 import Layout from "./Layout.astro";
+import { collections } from "../content/config";
 
-const { frontmatter } = Astro.props;
+// TODO intellisense with content
+const { frontmatter, entry } = Astro.props;
 ---
 
 <Layout title={`Blog • ${frontmatter.title}`}>
   <Navbar />
-  <h4>
-    {frontmatter.date}
-  </h4>
-  <h1>
-    {frontmatter.title}
-  </h1>
+  {frontmatter.date}
+  {frontmatter.title}
   <slot />
 </Layout>
