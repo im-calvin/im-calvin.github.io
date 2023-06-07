@@ -1,27 +1,30 @@
 ---
-import logo from '../public/calvin.png'
-import MenuButton from './MenuButton'
-import LightSwitch from './LightSwitch'
-import ResumeButton from './ResumeButton'
+import logo from "../public/calvin.png";
+import MenuButton from "./MenuButton";
+import LightSwitch from "./LightSwitch";
+import ResumeButton from "./ResumeButton";
 ---
+
 <div class="flex flex-row items-center">
   <a href="/" class="mr-5">
     <img src={logo} alt="Logo" class="h-8" />
   </a>
 
-  <div class="hidden md:inline-flex gap-5">
+  <div class="hidden gap-5 md:inline-flex">
     <a href="/about">About</a>
     <a href="/projects">Projects</a>
     <a href="/blog">Blog</a>
   </div>
 
-  <div class="grow"/>
+  <div class="grow"></div>
 
-  <LightSwitch client:load/>
+  <LightSwitch client:load />
 
   <div class="inline-flex md:hidden">
-    <MenuButton client:load/>
+    <MenuButton client:load />
   </div>
 
-  <ResumeButton />
+  <div class="hidden md:inline-flex">
+    <ResumeButton />
+  </div>
 </div>

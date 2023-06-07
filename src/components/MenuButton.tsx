@@ -30,22 +30,6 @@ export default function MenuButton() {
     return <a href={href}>{text}</a>;
   };
 
-  const menu = () => (
-    <Box
-      sx={{ width: 400 }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}>
-      <div className="flex flex-col items-center justify-center">
-        {menuItem("About", "/about")}
-        {menuItem("Blog", "/blog")}
-        {menuItem("Projects", "/projects")}
-        <div className="grow" />
-        <ResumeButton />
-      </div>
-    </Box>
-  );
-
   return (
     <>
       <button
@@ -60,11 +44,10 @@ export default function MenuButton() {
         open={state}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}>
-        <div className="flex h-full flex-col items-center justify-center">
+        <div className="flex h-full w-40 flex-col items-center justify-evenly gap-10 p-4">
           {menuItem("About", "/about")}
           {menuItem("Blog", "/blog")}
           {menuItem("Projects", "/projects")}
-          <div className="grow" />
           <ResumeButton />
         </div>
       </SwipeableDrawer>

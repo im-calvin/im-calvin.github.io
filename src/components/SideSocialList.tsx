@@ -48,7 +48,7 @@ export default function SocialList() {
           </a>
         </li>
         <li className="my-5 transition-transform ease-in-out hover:translate-y-[-3px] focus:translate-y-[-3px]">
-          <a href="/resume.pdf">
+          <a href="/resume.pdf" target="_blank" rel="noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

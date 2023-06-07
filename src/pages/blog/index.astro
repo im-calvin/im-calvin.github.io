@@ -12,10 +12,10 @@ const posts = (
 ---
 
 <Layout title="Blog • Kelvin Wong">
-  <Navbar />
-  <h1>Blog</h1>
-  <h1>A place where I can blab into the void</h1>
-  <ul>
+  <main>
+    <Navbar />
+    <h1>Blog</h1>
+    <h1>A place where I can blab into the void</h1>
     {
       posts.map((post) => (
         <BlogPreview
@@ -25,5 +25,5 @@ const posts = (
         />
       ))
     }
-  </ul>
+  </main>
 </Layout>
