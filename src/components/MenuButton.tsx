@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-import {
-  SwipeableDrawer,
-  Box,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
-import { Article, Description, GitHub, Info, SvgIconComponent } from "@mui/icons-material";
+import { SwipeableDrawer } from "@mui/material";
 import ResumeButton from "./ResumeButton";
+import { MdClose, MdMenu, MdSegment } from "react-icons/md";
 
 export default function MenuButton() {
   const [state, setState] = useState(false);
@@ -32,12 +24,8 @@ export default function MenuButton() {
 
   return (
     <>
-      <button
-        className="flex h-8 w-8 flex-col place-content-evenly items-end"
-        onClick={toggleDrawer(true)}>
-        <div className="w-8 border border-red-700" />
-        <div className="w-6 border border-red-700" />
-        <div className="w-8 border border-red-700" />
+      <button onClick={toggleDrawer(true)}>
+        <MdSegment className="h-8 w-8" />
       </button>
       <SwipeableDrawer
         anchor={"right"}
@@ -45,9 +33,10 @@ export default function MenuButton() {
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}>
         <div className="flex h-full w-40 flex-col items-center justify-evenly gap-10 p-4">
+          <MdClose onClick={toggleDrawer(false)} className="h-8 w-8 cursor-pointer" />
           {menuItem("About", "/about")}
-          {menuItem("Blog", "/blog")}
           {menuItem("Projects", "/projects")}
+          {menuItem("Blog", "/blog")}
           <ResumeButton />
         </div>
       </SwipeableDrawer>
