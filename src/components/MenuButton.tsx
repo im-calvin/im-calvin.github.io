@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { SwipeableDrawer } from "@mui/material";
 import ResumeButton from "./ResumeButton";
-import { MdClose, MdMenu, MdSegment } from "react-icons/md";
+import pkg from "react-icons/md/index";
+const { MdClose, MdMenu, MdSegment } = pkg;
 
 export default function MenuButton() {
   const [state, setState] = useState(false);
