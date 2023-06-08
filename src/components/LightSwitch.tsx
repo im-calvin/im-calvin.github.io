@@ -32,7 +32,7 @@ const ThemeSwitch = () => {
         htmlFor="theme-switch"
         className="flex cursor-pointer items-center"
       >
-        <span className="relative inline-block h-6 w-10 rounded-full bg-gray-300 dark:bg-gray-800">
+        <span className="relative inline-block h-6 w-10 rounded-full bg-gray-300 dark:bg-moona-purple">
           <span
             className={`absolute inset-1 transition-transform duration-300 ease-in-out ${
               isDarkMode ? "translate-x-5" : "translate-x-1"
@@ -55,7 +55,7 @@ const ThemeSwitch = () => {
           {isDarkMode ? (
             <Icon
               icon="material-symbols:dark-mode-outline-rounded"
-              className="hover:animate-spin"
+              className="text-moona-yellow hover:animate-spin"
             />
           ) : (
             <Icon

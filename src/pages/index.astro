@@ -16,21 +16,41 @@ import SideEmail from "../components/SideEmail";
     <div class="my-4 animate-[fall_200ms_ease-in-out] text-lg">
       Hi, my name is
     </div>
-    <div class="my-4 animate-[fall_400ms_ease-in-out] text-3xl font-bold">
+    <div
+      class="transform-all my-4 animate-[fall_400ms_ease-in-out] text-3xl font-bold duration-300 hover:text-4xl dark:text-moona-lightPurple"
+    >
       Kelvin Wong
     </div>
     <hr
-      class="my-4 w-40 animate-[fall_600ms_ease-in-out] border-2 border-red-700"
+      class="my-4 w-40 animate-[fall_600ms_ease-in-out] border-2 dark:border-moona-yellow"
     />
     <div class="my-4 animate-[fall_800ms_ease-in-out] text-lg">
       I am an aspiring software engineer who is currently a 3rd year student at
-      UBC in <a href="https://ece.ubc.ca" class="text-red-600">
-        computer engineering.</a
-      >
-      I am currently a software developer interning at <a
-        href="https://arisenv.ca"
-        class="text-red-600">ARIS</a
-      >.
+      UBC in
+
+      <div class="inline-block">
+        <a
+          href="https://ece.ubc.ca"
+          class="group transition duration-300 dark:text-moona-yellow"
+        >
+          computer engineering.
+          <span
+            class="-mt-1 block h-0.5 max-w-0 transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
+          ></span></a
+        >
+      </div>
+      I am currently a software developer interning at
+      <div class="inline-block">
+        <a
+          href="https://arisenv.ca"
+          class="group transition duration-300 dark:text-moona-yellow"
+        >
+          ARIS.
+          <span
+            class="-mt-1 block h-0.5 max-w-0 transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
+          ></span>
+        </a>
+      </div>
     </div>
     <div class="mt-10 animate-[fall_1000ms_ease-in-out] text-lg">
       Learn more
