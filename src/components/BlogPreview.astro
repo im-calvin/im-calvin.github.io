@@ -2,8 +2,14 @@
 const { title, url, snippet } = Astro.props;
 ---
 
-<a href={url}>
-  {title}
-</a>
-
-{snippet}
+<div class="block w-fit">
+  <a href={url} class="group transition duration-300 dark:text-moona-yellow">
+    {title}
+    <!-- <span
+      class="-mt-1 block h-0.5 max-w-0 transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
+    ></span> -->
+  </a>
+</div>
+<div class="text-sm">
+  {snippet}
+</div>
