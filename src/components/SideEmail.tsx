@@ -4,10 +4,11 @@ export default function SideEmail() {
       <a
         style={{ writingMode: "vertical-lr" }}
         className="relative my-10 inline-block pl-1 no-underline transition-transform ease-in-out hover:translate-y-[-3px] focus:translate-y-[-3px]"
-        href="mailto:contact@kelvinw.com">
+        href="mailto:contact@kelvinw.com"
+      >
         contact@kelvinw.com
       </a>
-      <div className="m-0 h-20 w-px border border-red-500" />
+      <div className="m-0 h-20 w-px border dark:border-moona-yellow" />
     </div>
   );
 }

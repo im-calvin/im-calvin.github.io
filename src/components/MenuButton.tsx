@@ -26,7 +26,7 @@ export default function MenuButton() {
   return (
     <>
       <button onClick={toggleDrawer(true)}>
-        <Icon icon="gg:menu-right" className="h-8 w-8" />
+        <Icon icon="gg:menu-right" className="h-8 w-8 dark:text-moona-yellow" />
       </button>
       <SwipeableDrawer
         anchor={"right"}
@@ -34,7 +34,7 @@ export default function MenuButton() {
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
       >
-        <div className="flex h-full w-40 flex-col items-center justify-evenly gap-10 p-4">
+        <div className="flex h-full w-40 flex-col items-center justify-evenly gap-10 p-4 dark:bg-anya-darkPurple dark:text-moona-white">
           <Icon
             icon="ic:round-close"
             onClick={toggleDrawer(false)}
