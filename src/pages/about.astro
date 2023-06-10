@@ -2,39 +2,122 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Navbar from "../components/Navbar.astro";
+import TechnologyButton from "../components/TechnologyButton";
 ---
 
-<Layout title="Kelvin Wong">
+<Layout title="About • Kelvin Wong">
   <main>
     <Navbar />
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
+    <h1 class="text-3xl text-moona-yellow">About</h1>
+    <div class="my-5">
+      I'm a passionate software developer with expertise in Typescript, React,
+      and Python. I love designing and implementing web-based solutions, and I
+      thrive in collaborative environments where I can tackle complex
+      challenges.
+    </div>
+    <div class="my-5">
+      Outside of coding, I am fond of cats and find that they always brighten my
+      day. You'll also find me bouldering, playing badminton and pool, and
+      exploring the city for unique cafes where I can savour a cup of coffee.
+    </div>
+    <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
+      <TechnologyButton
+        client:visible
+        href="https://html.spec.whatwg.org/multipage/"
+        icon="vscode-icons:file-type-html"
+        name="HTML"
       />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
+      <TechnologyButton
+        client:visible
+        href="https://www.w3.org/Style/CSS/Overview.en.html"
+        icon="vscode-icons:file-type-css"
+        name="CSS"
       />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
+      <TechnologyButton
+        client:visible
+        href="https://tailwindcss.com"
+        icon="logos:tailwindcss"
+        name="TailwindCSS"
       />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
+      <TechnologyButton
+        client:visible
+        href="https://www.javascript.com/"
+        icon="logos:javascript"
+        name="Javascript"
       />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
+      <TechnologyButton
+        client:visible
+        href="https://www.typescriptlang.org/"
+        icon="vscode-icons:file-type-typescript-official"
+        name="Typescript"
       />
-    </ul>
+      <TechnologyButton
+        client:visible
+        href="https://reactjs.org/"
+        icon="logos:react"
+        name="React"
+      />
+      <TechnologyButton
+        client:visible
+        href="https://nodejs.org"
+        icon="logos:nodejs"
+        name="Node.js"
+      />
+      <TechnologyButton
+        client:visible
+        href="https://www.python.org/"
+        icon="logos:python"
+        name="Python"
+      />
+      <TechnologyButton
+        client:visible
+        href="https://flask.palletsprojects.com/"
+        icon="logos:flask"
+        name="Flask"
+      />
+      <TechnologyButton
+        client:visible
+        href="https://java.com"
+        name="Java"
+        icon="logos:java"
+      />
+      <TechnologyButton
+        client:visible
+        href="https://junit.org"
+        name="JUnit"
+        icon="devicon:junit-wordmark"
+      />
+      <TechnologyButton
+        client:visible
+        icon="vscode-icons:file-type-git"
+        name="Git"
+        href="https://git-scm.com/"
+      />
+      <TechnologyButton
+        client:visible
+        icon="logos:docker"
+        name="Docker"
+        href="https://www.docker.com/"
+      />
+      <TechnologyButton
+        client:visible
+        href="https://sqlite.org"
+        icon="logos:sqlite"
+        name="SQLite"
+      />
+      <TechnologyButton
+        client:visible
+        href="https://www.mongodb.com/"
+        icon="logos:mongodb"
+        name="MongoDB"
+      />
+      <TechnologyButton
+        client:visible
+        href="https://cloud.google.com/"
+        icon="logos:google-cloud"
+        name="Google Cloud"
+      />
+    </div>
   </main>
 </Layout>
 
@@ -43,42 +126,5 @@ import Navbar from "../components/Navbar.astro";
     margin: auto;
     padding: 1.5rem;
     max-width: 60ch;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
-  }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
   }
 </style>
