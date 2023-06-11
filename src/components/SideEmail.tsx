@@ -8,7 +8,7 @@ export default function SideEmail() {
       >
         contact@kelvinw.com
       </a>
-      <div className="m-0 h-20 w-px border dark:border-moona-yellow" />
+      <div className="m-0 h-20 w-px border border-moona-purple dark:border-moona-yellow" />
     </div>
   );
 }

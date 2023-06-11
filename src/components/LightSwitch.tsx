@@ -60,7 +60,7 @@ const ThemeSwitch = () => {
           ) : (
             <Icon
               icon="material-symbols:light-mode-outline"
-              className="hover:animate-spin"
+              className="text-amber-700 hover:animate-spin"
             />
           )}
         </span>

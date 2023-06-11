@@ -14,7 +14,7 @@ export default function TechnologyButton({
   return (
     <a
       href={href}
-      className="relative flex h-24 w-auto flex-col items-center justify-center rounded border-moona-purple p-2 transition-opacity duration-300 ease-in-out dark:border dark:bg-moona-lightPurple/10 dark:hover:bg-moona-purple/[0.3]"
+      className="relative flex h-24 w-auto flex-col items-center justify-center rounded border border-moona-darkPurple bg-moona-purple/[0.3] p-2 transition-opacity duration-300 ease-in-out hover:bg-moona-purple/80 dark:border-moona-purple dark:bg-moona-lightPurple/10 dark:hover:bg-moona-purple/[0.3]"
     >
       <Icon
         icon="material-symbols:open-in-new"

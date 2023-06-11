@@ -20,7 +20,14 @@ export default function MenuButton() {
     };
 
   const menuItem = (text: string, href: string) => {
-    return <a href={href}>{text}</a>;
+    return (
+      <a
+        className="text-xl text-moona-darkPurple dark:text-moona-white"
+        href={href}
+      >
+        {text}
+      </a>
+    );
   };
 
   return (
@@ -34,7 +41,7 @@ export default function MenuButton() {
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
       >
-        <div className="flex h-full w-40 flex-col items-center justify-evenly gap-10 p-4 dark:bg-anya-darkPurple dark:text-moona-white">
+        <div className="flex h-full w-40 flex-col items-center justify-evenly gap-10 bg-moona-white p-4 dark:bg-anya-darkPurple dark:text-moona-white">
           <Icon
             icon="ic:round-close"
             onClick={toggleDrawer(false)}
