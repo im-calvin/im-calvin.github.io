@@ -9,8 +9,18 @@ const { frontmatter, entry } = Astro.props;
 ---
 
 <Layout title={`Blog • ${frontmatter.title}`}>
-  <Navbar />
-  {frontmatter.date}
-  {frontmatter.title}
-  <slot />
+  <main>
+    <Navbar />
+    {frontmatter.date}
+    {frontmatter.title}
+    <slot />
+  </main>
 </Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+</style>
