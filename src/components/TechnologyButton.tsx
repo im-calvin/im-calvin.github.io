@@ -21,7 +21,7 @@ export default function TechnologyButton({
         className="absolute right-0 top-0 m-2 opacity-50"
       />
       <Icon icon={icon} className="h-8 w-auto max-w-full" />
-      <div>{name}</div>
+      <div className="text-center text-sm">{name}</div>
     </a>
   );
 }
