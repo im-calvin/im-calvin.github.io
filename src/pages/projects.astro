@@ -1,23 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Navbar from "../components/Navbar.astro";
+import ProjectSelector from "../components/ProjectSelector";
 ---
 
 <Layout title="Projects • Kelvin Wong">
-  <main class="flex h-full flex-col items-center justify-center">
-    This page is still under construction.
-    <div class="my-5 block">
-      <a
-        href="/"
-        class="group text-2xl transition duration-300 dark:text-moona-yellow"
-      >
-        Home
-        <span
-          class="-mt-1 block h-0.5 max-w-0 transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
-        ></span>
-      </a>
-    </div>
+  <main>
+    <Navbar />
+    <ProjectSelector />
   </main>
 </Layout>
 
