@@ -1,8 +1,9 @@
 interface ProjectPreviewProps {
   title: string;
   description: string;
-  onClick: React.MouseEventHandler<HTMLDivElement>;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
   date?: string;
+  selected?: boolean;
 }
 
 export default function ProjectPreview({
@@ -10,17 +11,22 @@ export default function ProjectPreview({
   description,
   onClick,
   date,
+  selected,
 }: ProjectPreviewProps) {
   return (
     <>
-      <div
-        className="inline-block w-fit cursor-pointer rounded border border-moona-darkPurple bg-moona-purple/[0.3] p-2 hover:bg-moona-purple/80 dark:border-moona-purple dark:bg-moona-lightPurple/10 dark:hover:bg-moona-purple/[0.3]"
+      <button
+        className={`inline-block w-fit cursor-pointer rounded border ${
+          selected
+            ? "border-anya-darkPurple dark:border-moona-yellow"
+            : "border-moona-darkPurple dark:border-moona-purple"
+        } bg-moona-purple/[0.3] p-2 hover:bg-moona-purple/80  dark:bg-moona-lightPurple/10 dark:hover:bg-moona-purple/[0.3]`}
         onClick={onClick}
       >
         <div className="">{title}</div>
         <div className="text-sm text-opacity-30">{date}</div>
         <div className="text-sm">{description}</div>
-      </div>
+      </button>
     </>
   );
 }
