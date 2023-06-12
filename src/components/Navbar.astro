@@ -13,11 +13,20 @@ const { underline } = Astro.props;
   </a>
 
   <div class="hidden gap-5 md:inline-flex">
-    <a href="/about" class={underline === "about" ? "underline" : ""}>About</a>
-    <a href="/projects" class={underline === "projects" ? "underline" : ""}
+    <a
+      href="/about"
+      class={underline === "about" ? "underline underline-offset-4" : ""}
+      >About</a
+    >
+    <a
+      href="/projects"
+      class={underline === "projects" ? "underline underline-offset-4" : ""}
       >Projects</a
     >
-    <a href="/blog" class={underline === "blog" ? "underline" : ""}>Blog</a>
+    <a
+      href="/blog"
+      class={underline === "blog" ? "underline underline-offset-4" : ""}>Blog</a
+    >
   </div>
 
   <div class="grow"></div>

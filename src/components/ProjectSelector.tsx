@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export default function ProjectSelector() {
   const [projectLoaded, setProjectLoaded] = useState<number>(0);
-  console.log(projectLoaded);
   return (
     <>
       <div className="grid grid-cols-2 gap-5">
