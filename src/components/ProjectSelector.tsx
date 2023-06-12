@@ -19,6 +19,7 @@ export default function ProjectSelector() {
           onClick={() => setProjectLoaded(1)}
         />
       </div>
+      <div className="my-5 w-full border dark:border-moona-yellow" />
       <div className=""></div>
     </>
   );

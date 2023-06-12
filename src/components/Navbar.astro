@@ -3,6 +3,8 @@ import logo from "../public/calvin.png";
 import MenuButton from "./MenuButton";
 import LightSwitch from "./LightSwitch";
 import ResumeButton from "./ResumeButton";
+
+const { underline } = Astro.props;
 ---
 
 <div class="flex flex-row items-center pb-5">
@@ -11,9 +13,11 @@ import ResumeButton from "./ResumeButton";
   </a>
 
   <div class="hidden gap-5 md:inline-flex">
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/blog">Blog</a>
+    <a href="/about" class={underline === "about" ? "underline" : ""}>About</a>
+    <a href="/projects" class={underline === "projects" ? "underline" : ""}
+      >Projects</a
+    >
+    <a href="/blog" class={underline === "blog" ? "underline" : ""}>Blog</a>
   </div>
 
   <div class="grow"></div>
