@@ -1,4 +1,5 @@
 import ProjectPreview from "./ProjectPreview";
+import ProjectExpanded from "./ProjectExpanded";
 import { useState } from "react";
 
 export default function ProjectSelector() {
@@ -22,7 +23,9 @@ export default function ProjectSelector() {
         />
       </div>
       <div className="my-5 w-full border dark:border-moona-yellow" />
-      <div className=""></div>
+      <div className="">
+        <ProjectExpanded />
+      </div>
     </>
   );
 }
