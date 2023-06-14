@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Navbar from "../components/Navbar.astro";
-import SocialList from "../components/SideSocialList";
+import SideSocialList from "../components/SideSocialList";
 import SideEmail from "../components/SideEmail";
 ---
 
@@ -10,7 +10,7 @@ import SideEmail from "../components/SideEmail";
   <main>
     <Navbar />
     <div class="hidden md:inline-block">
-      <SocialList />
+      <SideSocialList />
       <SideEmail />
     </div>
     <div class="my-4 animate-[fall_200ms_ease-in-out] text-lg">
@@ -30,6 +30,7 @@ import SideEmail from "../components/SideEmail";
       <div class="inline-block">
         <a
           href="https://ece.ubc.ca"
+          target="_blank"
           class="group text-moona-darkPurple transition duration-300 dark:text-moona-yellow"
         >
           computer engineering.
@@ -42,6 +43,7 @@ import SideEmail from "../components/SideEmail";
       <div class="inline-block">
         <a
           href="https://arisenv.ca"
+          target="_blank"
           class="group text-moona-darkPurple transition duration-300 dark:text-moona-yellow"
         >
           ARIS.

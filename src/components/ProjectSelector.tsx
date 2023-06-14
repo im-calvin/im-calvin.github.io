@@ -28,6 +28,7 @@ export default function ProjectSelector() {
       <div className="">
         <ProjectExpanded
           title="3FA"
+          titleLink="https://www.youtube.com/watch?v=EXM25gpxC9Y"
           description="A secure and scalable multi-factor authentication system including a
             client application, admin dashboard, and backend server. The
             implementation seen here implements a secure file storage system but
@@ -41,7 +42,7 @@ export default function ProjectSelector() {
               key="github"
             />,
             <a href="https://3fa.netlify.app/">
-              <Icon icon="material-symbols:open-in-new" className="h-8 w-8" />
+              <Icon icon="material-symbols:open-in-new" className="h-6 w-6" />
             </a>,
           ]}
         />
