@@ -19,9 +19,9 @@ export default function ProjectSelector() {
           selected={projectLoaded === 0}
         />
         <ProjectPreview
-          title="title"
+          title="Mittens"
           // description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          date="2021-10-10"
+          date="2022 / 07"
           onClick={() => setProjectLoaded(1)}
           selected={projectLoaded === 1}
         />
@@ -30,7 +30,7 @@ export default function ProjectSelector() {
       <div className="relative">
         <CSSTransition
           in={projectLoaded === 0}
-          timeout={200} // Adjust the duration to match the CSS transition duration
+          timeout={300} // Adjust the duration to match the CSS transition duration
           classNames="fade"
           unmountOnExit
         >
@@ -43,6 +43,8 @@ export default function ProjectSelector() {
             the underlying authentication system could be used for any
             application."
             technologies={["React", "Javascript", "Electron"]}
+            imgSrc="/3fa_preview.png"
+            imgLink="https://www.youtube.com/watch?v=EXM25gpxC9Y"
             icons={[
               <GithubIcon
                 href="https://github.com/Computing-Collective/3FA/"
@@ -53,14 +55,14 @@ export default function ProjectSelector() {
                 <Icon icon="material-symbols:open-in-new" className="h-6 w-6" />
               </a>,
             ]}
-            className={`transition-opacity duration-200 ease-out ${
+            className={`transition-opacity duration-300 ease-out ${
               projectLoaded === 0 ? "opacity-100" : "opacity-0"
             } absolute left-0 top-0 w-full`}
           />
         </CSSTransition>
         <CSSTransition
           in={projectLoaded === 1}
-          timeout={200} // Adjust the duration to match the CSS transition duration
+          timeout={300} // Adjust the duration to match the CSS transition duration
           classNames="fade"
           unmountOnExit
         >
@@ -76,7 +78,8 @@ export default function ProjectSelector() {
                 key="github"
               />,
             ]}
-            className={`transition-opacity duration-200 ease-out ${
+            imgSrc="/mittens_preview.png"
+            className={`transition-opacity duration-300 ease-out ${
               projectLoaded === 1 ? "opacity-100" : "opacity-0"
             } absolute left-0 top-0 w-full`}
           />
