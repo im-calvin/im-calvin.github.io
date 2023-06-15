@@ -15,6 +15,7 @@ interface ProjectExpandedProps {
   description: string;
   icons: Array<any>; // TODO make this a type
   titleLink?: string;
+  className?: string;
 }
 
 export default function ProjectExpanded({
@@ -23,10 +24,11 @@ export default function ProjectExpanded({
   description,
   icons,
   titleLink,
+  className,
 }: ProjectExpandedProps) {
   return (
     <>
-      <div className="relative md:grid md:grid-cols-12 md:gap-5">
+      <div className={`${className} md:grid md:grid-cols-12 md:gap-5`}>
         {/* <div className="absolute z-10 h-full w-full bg-gray-600 opacity-50" /> */}
         <div className="hidden text-right md:z-0 md:col-start-6 md:col-end-[-1] md:row-start-1 md:row-end-[-1] md:mt-20 md:block">
           <a
@@ -58,7 +60,7 @@ export default function ProjectExpanded({
             {technologies.map((technology, index) => (
               <span
                 className="mr-5 rounded-2xl px-4 py-1 dark:border-moona-white dark:bg-moona-lightPurple/[0.3]"
-                key={index}
+                key={technology}
               >
                 {technology}
               </span>
