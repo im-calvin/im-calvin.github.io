@@ -34,17 +34,17 @@ export default function ProjectExpanded({
     <>
       <div className={`${className} md:grid md:grid-cols-12 md:gap-5`}>
         {/* image */}
-        <div className="hidden text-right md:z-0 md:col-start-6 md:col-end-[-1] md:row-start-1 md:row-end-[-1] md:mt-24 md:block">
+        <div className="hidden h-full w-auto object-cover object-center text-right md:z-0 md:col-start-6 md:col-end-[-1] md:row-start-1 md:row-end-[-1] md:block">
           <a href={imgLink} rel="noopener noreferrer" target="_blank">
             <img
               src={imgSrc}
               alt={`${title} preview `}
-              className="left-0 top-0 rounded-xl object-cover brightness-50 grayscale"
+              className="left-0 top-0 h-full rounded-xl object-contain object-center brightness-50 grayscale" // decide between cover and contain
             />
           </a>
         </div>
         {/* text */}
-        <div className="relative z-10 p-5 md:col-start-1 md:col-end-8 md:row-start-1 md:row-end-[-1]">
+        <div className="relative z-10 md:col-start-1 md:col-end-8 md:row-start-1 md:row-end-[-1]">
           <a
             href={titleLink}
             target="_blank"
@@ -69,7 +69,7 @@ export default function ProjectExpanded({
               </span>
             ))}
           </p>
-          <div className="flex flex-row">
+          <div className="my-5 flex flex-row">
             {icons.map((icon) => (
               <span className="mr-5 h-6 w-6 transition-colors dark:hover:text-moona-yellow">
                 {icon}
