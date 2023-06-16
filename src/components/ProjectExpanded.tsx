@@ -39,12 +39,12 @@ export default function ProjectExpanded({
             <img
               src={imgSrc}
               alt={`${title} preview `}
-              className="left-0 top-0 h-full rounded-xl object-contain object-center brightness-50 grayscale" // decide between cover and contain
+              className="left-0 top-0 h-full rounded-xl object-cover object-center brightness-50 grayscale" // decide between cover and contain
             />
           </a>
         </div>
         {/* text */}
-        <div className="relative z-10 md:col-start-1 md:col-end-8 md:row-start-1 md:row-end-[-1]">
+        <div className="relative z-10 flex flex-col md:col-start-1 md:col-end-8 md:row-start-1 md:row-end-[-1]">
           <a
             href={titleLink}
             target="_blank"
@@ -56,13 +56,15 @@ export default function ProjectExpanded({
               <Icon icon="iconoir:arrow-tl" rotate={1} className="h-3 w-3" />
             </span>
           </a>
-          <p className="my-5 md:rounded-lg md:p-3 md:dark:bg-gray-800 md:dark:shadow-gray-600">
-            {description}
-          </p>
-          <p className="my-5 flex flex-row">
+          <div className="my-5 flex flex-grow items-center justify-center">
+            <p className="md:rounded-lg md:p-3 md:dark:bg-gray-800 md:dark:shadow-gray-600">
+              {description}
+            </p>
+          </div>
+          <p className="flex flex-row flex-wrap">
             {technologies.map((technology, index) => (
               <span
-                className="mr-5 rounded-2xl px-4 py-1 dark:border-moona-white dark:bg-moona-lightPurple/[0.3]"
+                className="my-1 mr-5 rounded-2xl px-4 py-1 dark:border-moona-white dark:bg-moona-lightPurple/[0.3]"
                 key={technology}
               >
                 {technology}
