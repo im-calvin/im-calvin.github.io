@@ -10,7 +10,7 @@ export default function ProjectSelector() {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-5 ">
         <ProjectPreview
           title="3FA"
           // description="A custom multi-factor authentication system for cloud storage."
