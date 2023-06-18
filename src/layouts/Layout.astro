@@ -26,15 +26,43 @@ const { title } = Astro.props;
       } else {
         document.documentElement.classList.remove("dark");
       }
+
+      /* for stars */
+      const root = document.documentElement;
+      const generateBoxShadow = (n: number) => {
+        let boxShadowValue = "";
+        for (let i = 0; i < n; i++) {
+          const x = Math.floor(Math.random() * 2000);
+          const y = Math.floor(Math.random() * 2000);
+          boxShadowValue += `${x}px ${y}px #FFF, `;
+        }
+        return boxShadowValue.slice(0, -2); // Remove the trailing comma and space
+      };
+
+      const boxShadowSmall = generateBoxShadow(700);
+      const boxShadowMedium = generateBoxShadow(200);
+      const boxShadowBig = generateBoxShadow(100);
+
+      root.style.setProperty("--box-shadow-small", boxShadowSmall);
+      root.style.setProperty("--box-shadow-medium", boxShadowMedium);
+      root.style.setProperty("--box-shadow-big", boxShadowBig);
     </script>
   </head>
   <body
     class="h-full bg-moona-white text-moona-black dark:bg-anya-darkPurple dark:text-moona-white"
   >
+    <div id="stars" class="shadow-star animate-star h-1 w-1 bg-transparent">
+    </div>
+    <div id="stars2" class="shadow-star animate-star h-2 w-2 bg-transparent">
+    </div>
+    <div id="stars3" class="shadow-star animate-star h-3 w-3 bg-transparent">
+    </div>
     <slot />
   </body>
 </html>
 <style is:global>
+  @import "../styles/stars.css";
+
   html {
     font-family: system-ui, sans-serif;
     height: 100%;
