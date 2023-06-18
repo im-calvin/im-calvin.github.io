@@ -32,37 +32,24 @@ const ThemeSwitch = () => {
         htmlFor="theme-switch"
         className="flex cursor-pointer items-center"
       >
-        <span className="relative inline-block h-6 w-10 rounded-full bg-gray-300 dark:bg-moona-purple">
+        <span className="relative mx-5 inline-block h-6 w-10 rounded-full bg-moona-purple dark:bg-moona-purple">
           <span
             className={`absolute inset-1 transition-transform duration-300 ease-in-out ${
               isDarkMode ? "translate-x-5" : "translate-x-1"
             }`}
           >
-            <svg
-              className="h-4 w-4 -translate-x-1 transform rounded-full bg-indigo-500 text-white shadow"
-              fill="currentColor"
-              viewBox="0 0 8 8"
-            >
-              <circle cx="4" cy="4" r="3" />
-            </svg>
+            {isDarkMode ? (
+              <Icon
+                icon="material-symbols:dark-mode-outline-rounded"
+                className="h-4 w-4 -translate-x-1 transform rounded-full text-moona-yellow shadow"
+              />
+            ) : (
+              <Icon
+                icon="material-symbols:light-mode-outline"
+                className="h-4 w-4 -translate-x-1 transform rounded-full text-yellow-100"
+              />
+            )}
           </span>
-        </span>
-        <span
-          className={`mx-2 transition-transform duration-500 ease-in-out ${
-            isDarkMode ? "rotate-[360deg]" : ""
-          }`}
-        >
-          {isDarkMode ? (
-            <Icon
-              icon="material-symbols:dark-mode-outline-rounded"
-              className="text-moona-yellow hover:animate-spin"
-            />
-          ) : (
-            <Icon
-              icon="material-symbols:light-mode-outline"
-              className="text-amber-700 hover:animate-spin"
-            />
-          )}
         </span>
       </label>
     </div>
