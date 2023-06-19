@@ -26,7 +26,7 @@ export default function ProjectPreview({
         onClick={onClick}
       >
         <div className="">{title}</div>
-        <div className="text-sm text-gray-300 text-opacity-80">{date}</div>
+        <div className="text-sm dark:text-gray-300 text-opacity-80">{date}</div>
         <div className="text-left text-sm">{description}</div>
       </button>
     </>

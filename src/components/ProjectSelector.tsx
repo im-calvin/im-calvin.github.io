@@ -26,7 +26,7 @@ export default function ProjectSelector() {
           selected={projectLoaded === 1}
         />
       </div>
-      <div className="my-5 w-full border dark:border-moona-yellow" />
+      <div className="my-5 w-full border dark:border-moona-yellow border-anya-darkPurple" />
       <div className="relative">
         <CSSTransition
           in={projectLoaded === 0}

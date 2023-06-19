@@ -49,7 +49,7 @@ export default function ProjectExpanded({
             href={titleLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex w-fit flex-row transition duration-200 dark:hover:text-moona-yellow"
+            className="group flex w-fit flex-row transition duration-200 hover:text-moona-purple dark:hover:text-moona-yellow"
           >
             <span className="text-3xl">{title}</span>
             <span className="mx-1 inline-flex items-center transition-all group-hover:-translate-y-1 group-hover:translate-x-1">
@@ -57,14 +57,14 @@ export default function ProjectExpanded({
             </span>
           </a>
           <div className="my-5 flex flex-grow items-center justify-center">
-            <p className="md:rounded-lg md:p-3 md:dark:bg-gray-800 md:dark:shadow-gray-600">
+            <p className=" md:rounded-lg md:bg-gray-800 md:p-3 md:text-white md:shadow-gray-600">
               {description}
             </p>
           </div>
-          <p className="flex flex-row flex-wrap">
+          <p className="flex flex-row flex-wrap md:max-w-[23vw]">
             {technologies.map((technology, index) => (
               <span
-                className="my-1 mr-5 rounded-2xl px-4 py-1 dark:border-moona-white dark:bg-moona-lightPurple/[0.3]"
+                className="my-1 mr-5 rounded-2xl border border-moona-darkPurple bg-moona-purple/[0.3] px-4 py-1 dark:border-moona-white dark:bg-moona-lightPurple/[0.3]"
                 key={technology}
               >
                 {technology}
@@ -73,7 +73,7 @@ export default function ProjectExpanded({
           </p>
           <div className="my-5 flex flex-row">
             {icons.map((icon) => (
-              <span className="mr-5 h-6 w-6 transition-colors dark:hover:text-moona-yellow">
+              <span className="mr-5 h-6 w-6 transition-colors hover:text-moona-purple dark:hover:text-moona-yellow">
                 {icon}
               </span>
             ))}
