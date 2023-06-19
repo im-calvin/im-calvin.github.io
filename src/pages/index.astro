@@ -1,66 +1,177 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Navbar from "../components/Navbar.astro";
-import SocialList from "../components/SideSocialList";
+import SideSocialList from "../components/SideSocialList";
 import SideEmail from "../components/SideEmail";
+import ArrowDown from "../components/ArrowDown";
+import TechnologyButton from "../components/TechnologyButton";
 ---
 
 <Layout title="Kelvin Wong">
   <main>
     <Navbar />
     <div class="hidden md:inline-block">
-      <SocialList />
+      <SideSocialList />
       <SideEmail />
     </div>
-    <div class="my-4 animate-[fall_200ms_ease-in-out] text-lg">
-      Hi, my name is
-    </div>
-    <div
-      class="transform-all my-4 max-w-fit animate-[fall_400ms_ease-in-out] text-3xl font-bold text-anya-darkPurple duration-300 hover:text-4xl dark:text-moona-lightPurple"
-    >
-      Kelvin Wong
-    </div>
-    <hr
-      class="my-4 w-40 animate-[fall_600ms_ease-in-out] border-2 border-moona-darkPurple dark:border-moona-yellow"
-    />
-    <div class="my-4 animate-[fall_800ms_ease-in-out] text-lg">
-      I am an aspiring software engineer who is currently a 3rd year student at
-      UBC in
-      <div class="inline-block">
-        <a
-          href="https://ece.ubc.ca"
-          class="group text-moona-darkPurple transition duration-300 dark:text-moona-yellow"
-        >
-          computer engineering.
-          <span
-            class="-mt-1 block h-0.5 max-w-0 bg-moona-darkPurple transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
-          ></span></a
-        >
+    <div class="min-h-[94vh]">
+      <div class="my-4 animate-[fall_200ms_ease-in-out] text-lg">
+        Hi, my name is
       </div>
-      I am currently a software developer interning at
-      <div class="inline-block">
-        <a
-          href="https://arisenv.ca"
-          class="group text-moona-darkPurple transition duration-300 dark:text-moona-yellow"
-        >
-          ARIS.
-          <span
-            class="-mt-1 block h-0.5 max-w-0 bg-moona-darkPurple transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
-          ></span>
-        </a>
+      <div
+        class="transform-all my-4 max-w-fit animate-[fall_400ms_ease-in-out] text-3xl font-bold text-anya-darkPurple duration-300 hover:text-4xl dark:text-moona-lightPurple"
+      >
+        Kelvin Wong
+      </div>
+      <hr
+        class="my-4 w-40 animate-[fall_600ms_ease-in-out] border-2 border-moona-darkPurple dark:border-moona-yellow"
+      />
+      <div class="my-4 animate-[fall_800ms_ease-in-out] text-lg">
+        I am an aspiring software engineer who is currently a 3rd year student
+        at UBC in
+        <div class="inline-block">
+          <a
+            href="https://ece.ubc.ca"
+            target="_blank"
+            class="group text-moona-darkPurple transition duration-300 dark:text-moona-yellow"
+          >
+            computer engineering.
+            <span
+              class="-mt-1 block h-0.5 max-w-0 bg-moona-darkPurple transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
+            ></span></a
+          >
+        </div>
+        I am also currently a software developer interning at
+        <div class="inline-block">
+          <a
+            href="https://arisenv.ca"
+            target="_blank"
+            class="group text-moona-darkPurple transition duration-300 dark:text-moona-yellow"
+          >
+            ARIS.
+            <span
+              class="-mt-1 block h-0.5 max-w-0 bg-moona-darkPurple transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
+            ></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="my-5 animate-[fall_1000ms_ease-in-out] text-lg">
+        With an expertise in Typescript, React, and Python, I love designing and
+        implementing web-based solutions, and I thrive in collaborative
+        environments where I can tackle complex challenges.
+      </div>
+      <div class="my-5 animate-[fall_1200ms_ease-in-out] text-lg">
+        Outside of coding, I am fond of cats and find that they always brighten
+        my day. You'll also find me bouldering, playing badminton and pool, and
+        exploring the city for unique cafes where I can savour a cup of coffee.
       </div>
     </div>
-    <!-- <div class="mt-10 animate-[fall_1000ms_ease-in-out] text-lg">
-      Learn more
-    </div> -->
+
+    <ArrowDown client:load />
+
+    <div class="">
+      <div class="my-5 text-2xl text-moona-darkPurple dark:text-moona-yellow">
+        Core Competencies
+      </div>
+      <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
+        <TechnologyButton
+          client:visible
+          href="https://html.spec.whatwg.org/multipage/"
+          icon="vscode-icons:file-type-html"
+          name="HTML"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://www.w3.org/Style/CSS/Overview.en.html"
+          icon="vscode-icons:file-type-css"
+          name="CSS"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://tailwindcss.com"
+          icon="vscode-icons:file-type-tailwind"
+          name="TailwindCSS"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://www.javascript.com/"
+          icon="logos:javascript"
+          name="Javascript"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://www.typescriptlang.org/"
+          icon="vscode-icons:file-type-typescript-official"
+          name="Typescript"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://reactjs.org/"
+          icon="logos:react"
+          name="React"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://nodejs.org"
+          icon="logos:nodejs"
+          name="Node.js"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://www.python.org/"
+          icon="logos:python"
+          name="Python"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://flask.palletsprojects.com/"
+          icon="simple-icons:flask"
+          name="Flask"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://java.com"
+          name="Java"
+          icon="logos:java"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://junit.org"
+          name="JUnit"
+          icon="devicon:junit"
+        />
+        <TechnologyButton
+          client:visible
+          icon="vscode-icons:file-type-git"
+          name="Git"
+          href="https://git-scm.com/"
+        />
+        <TechnologyButton
+          client:visible
+          icon="logos:docker-icon"
+          name="Docker"
+          href="https://www.docker.com/"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://sqlite.org"
+          icon="vscode-icons:file-type-sqlite"
+          name="SQLite"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://www.mongodb.com/"
+          icon="logos:mongodb-icon"
+          name="MongoDB"
+        />
+        <TechnologyButton
+          client:visible
+          href="https://cloud.google.com/"
+          icon="logos:google-cloud"
+          name="Google Cloud"
+        />
+      </div>
+    </div>
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
-</style>
