@@ -24,7 +24,7 @@ export default function ArrowDown() {
     <>
       {visible && (
         <div className="z-2 fixed bottom-0 left-0 mb-4 flex w-full animate-bounce justify-center opacity-60 transition">
-          <Icon icon="ep:arrow-down-bold" fontSize={30} />
+          <Icon icon="ep:arrow-down-bold" fontSize={40} />
         </div>
       )}
     </>

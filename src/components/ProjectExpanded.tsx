@@ -32,9 +32,9 @@ export default function ProjectExpanded({
 }: ProjectExpandedProps) {
   return (
     <>
-      <div className={`${className} md:grid md:grid-cols-12 md:gap-5`}>
+      <div className={`${className} pb-5 md:grid md:grid-cols-12 md:gap-5`}>
         {/* image */}
-        <div className="hidden h-full w-auto object-cover object-center text-right md:z-0 md:col-start-6 md:col-end-[-1] md:row-start-1 md:row-end-[-1] md:block">
+        <div className="hidden h-[60vh] w-auto object-cover object-center text-right md:z-0 md:col-start-6 md:col-end-[-1] md:row-start-1 md:row-end-[-1] md:block">
           <a href={imgLink} rel="noopener noreferrer" target="_blank">
             <img
               src={imgSrc}

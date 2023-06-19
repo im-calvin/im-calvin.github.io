@@ -78,7 +78,7 @@ export default function ProjectSelector() {
                 key="github"
               />,
             ]}
-            imgSrc="/mittens_preview.png"
+            imgSrc="/mittens.png"
             className={`transition-opacity duration-300 ease-out ${
               projectLoaded === 1 ? "opacity-100" : "opacity-0"
             } absolute left-0 top-0 w-full`}
