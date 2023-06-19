@@ -32,24 +32,38 @@ export default function MenuButton() {
 
   return (
     <>
-      <button onClick={toggleDrawer(true)}>
-        <Icon icon="gg:menu-right" className="h-8 w-8 dark:text-moona-yellow" />
+      <button className="z-30 hover:text-moona-purple">
+        {state ? (
+          // close button if sidebar is open
+          <Icon
+            icon="ic:round-close"
+            onClick={toggleDrawer(false)}
+            className="h-8 w-8 cursor-pointer"
+          />
+        ) : (
+          <Icon
+            icon="gg:menu-right"
+            className="h-8 w-8 cursor-pointer"
+            onClick={toggleDrawer(true)}
+          />
+        )}
       </button>
       <SwipeableDrawer
         anchor={"right"}
         open={state}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
+        sx={{ zIndex: 20 }}
       >
-        <div className="flex h-full w-40 flex-col items-center justify-evenly gap-10 bg-moona-white p-4 dark:bg-anya-darkPurple dark:text-moona-white">
-          <Icon
+        <div className="flex h-full w-40 flex-col items-center justify-evenly gap-12 bg-moona-white p-4 pb-14 pt-32 dark:bg-anya-darkPurple dark:text-moona-white">
+          {/* <Icon
             icon="ic:round-close"
             onClick={toggleDrawer(false)}
             className="h-8 w-8 cursor-pointer"
-          />
-          {menuItem("About", "/about")}
+          /> */}
           {menuItem("Projects", "/projects")}
           {menuItem("Blog", "/blog")}
+          <div className="flex-grow" />
           <ResumeButton />
         </div>
       </SwipeableDrawer>
