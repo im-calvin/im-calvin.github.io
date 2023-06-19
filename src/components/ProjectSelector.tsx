@@ -26,7 +26,7 @@ export default function ProjectSelector() {
           selected={projectLoaded === 1}
         />
       </div>
-      <div className="my-5 w-full border dark:border-moona-yellow border-anya-darkPurple" />
+      <div className="my-5 w-full border border-anya-darkPurple dark:border-moona-yellow" />
       <div className="relative">
         <CSSTransition
           in={projectLoaded === 0}
@@ -44,6 +44,7 @@ export default function ProjectSelector() {
             application."
             technologies={["React", "Javascript", "Electron"]}
             imgSrc="/3fa_preview.png"
+            imgSmSrc="/3fa_preview_sm.png"
             imgLink="https://www.youtube.com/watch?v=EXM25gpxC9Y"
             icons={[
               <GithubIcon
@@ -79,6 +80,7 @@ export default function ProjectSelector() {
               />,
             ]}
             imgSrc="/mittens.png"
+            imgSmSrc="/mittens_sm.png"
             className={`transition-opacity duration-300 ease-out ${
               projectLoaded === 1 ? "opacity-100" : "opacity-0"
             } absolute left-0 top-0 w-full`}

@@ -1,4 +1,6 @@
 import { Icon } from "@iconify/react";
+import { useEffect, useState } from "react";
+import "lazysizes";
 
 /* needs to include:
 - title
@@ -17,6 +19,7 @@ interface ProjectExpandedProps {
   titleLink?: string;
   className?: string;
   imgSrc: string;
+  imgSmSrc: string;
   imgLink?: string;
 }
 
@@ -28,8 +31,31 @@ export default function ProjectExpanded({
   titleLink,
   className,
   imgSrc,
+  imgSmSrc,
   imgLink,
 }: ProjectExpandedProps) {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    const img = document.querySelector(".lazyload");
+
+    // once img loads, set isLoaded to true
+    if (img) {
+      img.addEventListener("lazyloaded", () => {
+        setIsLoaded(true);
+      });
+    }
+
+    // cleanup
+    return () => {
+      if (img) {
+        img.removeEventListener("lazyloaded", () => {
+          setIsLoaded(true);
+        });
+      }
+    };
+  }, []);
+
   return (
     <>
       <div className={`${className} pb-5 md:grid md:grid-cols-12 md:gap-5`}>
@@ -37,9 +63,12 @@ export default function ProjectExpanded({
         <div className="hidden h-[60vh] w-auto object-cover object-center text-right md:z-0 md:col-start-6 md:col-end-[-1] md:row-start-1 md:row-end-[-1] md:block">
           <a href={imgLink} rel="noopener noreferrer" target="_blank">
             <img
-              src={imgSrc}
+              src={imgSmSrc}
+              data-src={imgSrc}
               alt={`${title} preview `}
-              className="left-0 top-0 h-full rounded-xl object-cover object-center brightness-50 grayscale" // decide between cover and contain
+              className={`lazyload left-0 top-0 h-full rounded-xl object-cover object-center ${
+                isLoaded ? "" : "blur-sm"
+              } brightness-50 grayscale`} // decide between cover and contain
             />
           </a>
         </div>

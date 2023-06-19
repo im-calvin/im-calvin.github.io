@@ -56,11 +56,6 @@ export default function MenuButton() {
         sx={{ zIndex: 20 }}
       >
         <div className="flex h-full w-40 flex-col items-center justify-evenly gap-12 bg-moona-white p-4 pb-14 pt-32 dark:bg-anya-darkPurple dark:text-moona-white">
-          {/* <Icon
-            icon="ic:round-close"
-            onClick={toggleDrawer(false)}
-            className="h-8 w-8 cursor-pointer"
-          /> */}
           {menuItem("Projects", "/projects")}
           {menuItem("Blog", "/blog")}
           <div className="flex-grow" />
