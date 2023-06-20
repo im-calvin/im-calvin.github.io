@@ -35,19 +35,34 @@ const { title } = Astro.props;
           const x = Math.floor(Math.random() * 2000);
           const y = Math.floor(Math.random() * 2000);
           boxShadowValue += `${x}px ${y}px ${
-            localStorage.theme === "dark" ? "#FFF" : "#BDACE3"
+            document.documentElement.classList.contains("dark")
+              ? "#FFF"
+              : "#BDACE3"
           }, `;
         }
         return boxShadowValue.slice(0, -2); // Remove the trailing comma and space
       };
 
-      const boxShadowSmall = generateBoxShadow(700);
-      const boxShadowMedium = generateBoxShadow(200);
-      const boxShadowBig = generateBoxShadow(100);
+      const handleThemeChange = () => {
+        const boxShadowSmall = generateBoxShadow(700);
+        const boxShadowMedium = generateBoxShadow(200);
+        const boxShadowBig = generateBoxShadow(100);
 
-      root.style.setProperty("--box-shadow-small", boxShadowSmall);
-      root.style.setProperty("--box-shadow-medium", boxShadowMedium);
-      root.style.setProperty("--box-shadow-big", boxShadowBig);
+        root.style.setProperty("--box-shadow-small", boxShadowSmall);
+        root.style.setProperty("--box-shadow-medium", boxShadowMedium);
+        root.style.setProperty("--box-shadow-big", boxShadowBig);
+      };
+
+      // Call addThemeChangeListener when the DOM is ready
+      document.addEventListener("DOMContentLoaded", () => {
+        handleThemeChange();
+      });
+
+      const classListObserver = new MutationObserver(handleThemeChange);
+      classListObserver.observe(document.documentElement, {
+        attributes: true, // Watch for attribute changes
+        attributeFilter: ["class"], // Only watch for changes in the class attribute
+      });
     </script>
   </head>
   <body
