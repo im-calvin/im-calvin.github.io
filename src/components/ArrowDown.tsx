@@ -6,7 +6,7 @@ export default function ArrowDown() {
 
   useEffect(() => {
     const handleInteraction = () => {
-      setVisible(false);
+      setVisible(window.scrollY === 0);
     };
 
     // Attach event listeners for various user interactions (e.g., scroll, click, etc.)
@@ -16,7 +16,6 @@ export default function ArrowDown() {
     return () => {
       // Clean up the event listeners when the component is unmounted
       window.removeEventListener("scroll", handleInteraction);
-      // Remove other event listeners here
     };
   }, []);
 
