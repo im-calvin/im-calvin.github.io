@@ -32,7 +32,7 @@ const { title } = Astro.props;
       const generateBoxShadow = (n: number) => {
         let boxShadowValue = "";
         for (let i = 0; i < n; i++) {
-          const x = Math.floor(Math.random() * 2000);
+          const x = Math.floor(Math.random() * window.innerWidth);
           const y = Math.floor(Math.random() * 2000);
           boxShadowValue += `${x}px ${y}px ${
             document.documentElement.classList.contains("dark")
@@ -53,7 +53,7 @@ const { title } = Astro.props;
         root.style.setProperty("--box-shadow-big", boxShadowBig);
       };
 
-      // Call addThemeChangeListener when the DOM is ready
+      // Update stars immediately when theme is toggled
       document.addEventListener("DOMContentLoaded", () => {
         handleThemeChange();
       });
