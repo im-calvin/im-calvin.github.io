@@ -29,7 +29,7 @@ const { title } = Astro.props;
 
       /* for stars */
       const root = document.documentElement;
-      const generateBoxShadow = (n: number) => {
+      const generateBoxShadow = (n: number): string => {
         let boxShadowValue = "";
         for (let i = 0; i < n; i++) {
           const x = Math.floor(Math.random() * window.innerWidth);
@@ -44,9 +44,22 @@ const { title } = Astro.props;
       };
 
       const handleThemeChange = () => {
-        const boxShadowSmall = generateBoxShadow(700);
-        const boxShadowMedium = generateBoxShadow(200);
-        const boxShadowBig = generateBoxShadow(100);
+        const isMd = window.innerWidth >= 768;
+        console.log(isMd);
+        let boxShadowSmall = "";
+        let boxShadowMedium = "";
+        let boxShadowBig = "";
+        if (isMd) {
+          // If desktop
+          boxShadowSmall = generateBoxShadow(700);
+          boxShadowMedium = generateBoxShadow(300);
+          boxShadowBig = generateBoxShadow(100);
+        } else {
+          // If mobile
+          boxShadowSmall = generateBoxShadow(100);
+          boxShadowMedium = generateBoxShadow(50);
+          boxShadowBig = generateBoxShadow(25);
+        }
 
         root.style.setProperty("--box-shadow-small", boxShadowSmall);
         root.style.setProperty("--box-shadow-medium", boxShadowMedium);
@@ -54,9 +67,8 @@ const { title } = Astro.props;
       };
 
       // Update stars immediately when theme is toggled
-      document.addEventListener("DOMContentLoaded", () => {
-        handleThemeChange();
-      });
+      document.addEventListener("DOMContentLoaded", handleThemeChange);
+      window.addEventListener("resize", handleThemeChange);
 
       const classListObserver = new MutationObserver(handleThemeChange);
       classListObserver.observe(document.documentElement, {
