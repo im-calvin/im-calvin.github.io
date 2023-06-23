@@ -1,3 +1,5 @@
+import "../styles/AccentShard.css";
+
 interface ProjectPreviewProps {
   title: string;
   description?: string;
@@ -18,16 +20,15 @@ export default function ProjectPreview({
   return (
     <>
       <button
-        className={`inline-block h-fit rounded border first-letter:cursor-pointer ${
+        className={`card relative inline-block h-fit rounded border first-letter:cursor-pointer ${
           selected
             ? "border-anya-darkPurple dark:border-moona-yellow"
             : "border-moona-darkPurple dark:border-moona-purple"
         } bg-moona-purple/[0.3] p-2 hover:bg-moona-purple/80  dark:bg-moona-lightPurple/10 dark:hover:bg-moona-purple/[0.3] ${className}`}
         onClick={onClick}
       >
-        <div className="">{title}</div>
-        <div className="text-sm dark:text-gray-300 text-opacity-80">{date}</div>
-        <div className="text-left text-sm">{description}</div>
+        <div>{title}</div>
+        <div className="text-sm text-opacity-80 dark:text-gray-300">{date}</div>
       </button>
     </>
   );

@@ -12,7 +12,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Kelvin Wong's personal site." />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/calvin.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script>
@@ -45,20 +45,16 @@ const { title } = Astro.props;
 
       const handleThemeChange = () => {
         const isMd = window.innerWidth >= 768;
-        console.log(isMd);
-        let boxShadowSmall = "";
-        let boxShadowMedium = "";
-        let boxShadowBig = "";
         if (isMd) {
           // If desktop
-          boxShadowSmall = generateBoxShadow(700);
-          boxShadowMedium = generateBoxShadow(300);
-          boxShadowBig = generateBoxShadow(100);
+          var boxShadowSmall = generateBoxShadow(700);
+          var boxShadowMedium = generateBoxShadow(300);
+          var boxShadowBig = generateBoxShadow(100);
         } else {
           // If mobile
-          boxShadowSmall = generateBoxShadow(100);
-          boxShadowMedium = generateBoxShadow(50);
-          boxShadowBig = generateBoxShadow(25);
+          var boxShadowSmall = generateBoxShadow(100);
+          var boxShadowMedium = generateBoxShadow(50);
+          var boxShadowBig = generateBoxShadow(25);
         }
 
         root.style.setProperty("--box-shadow-small", boxShadowSmall);
@@ -99,7 +95,6 @@ const { title } = Astro.props;
     <div id="stars2" class="h-2 w-2 bg-transparent"></div>
     <div id="stars3" class="h-3 w-3 bg-transparent"></div>
     <div id="blob" class="-z-10 blur-xl"></div>
-    <!-- <div id="blur"></div> -->
     <slot />
   </body>
 

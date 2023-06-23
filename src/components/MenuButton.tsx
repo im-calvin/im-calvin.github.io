@@ -22,7 +22,7 @@ export default function MenuButton() {
   const menuItem = (text: string, href: string) => {
     return (
       <a
-        className="text-xl text-moona-darkPurple dark:text-moona-white"
+        className="cursor-pointer text-xl text-moona-black transition-colors duration-300 ease-in-out hover:text-moona-purple hover:underline dark:text-moona-white dark:hover:text-moona-purple"
         href={href}
       >
         {text}

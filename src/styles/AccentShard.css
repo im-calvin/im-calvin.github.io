@@ -1,6 +1,10 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
 .card:after {  
   content: "";
-  height: 70px;
+  height: 40px;
   width: 1px;  
   position: absolute;  
   left: -1px;
@@ -8,11 +12,7 @@
   transition: top, opacity;
   transition-duration: 600ms;
   transition-timing-function: ease;
-  background: linear-gradient(
-    transparent,
-    purple,
-    transparent
-  );
+  @apply bg-gradient-to-r from-moona-yellow to-transparent dark:from-anya-darkPurple;
   opacity: 0;
 }
 
@@ -22,6 +22,6 @@
 }
 
 .card:hover:after {
-  top: 25%;
+  top: 20%;
   opacity: 1;
 }
