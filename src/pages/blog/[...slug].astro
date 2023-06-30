@@ -10,11 +10,15 @@ export async function getStaticPaths() {
   }));
 }
 
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
 // 2. When it's time to render, you can get the entry directly from the prop
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BlogPostLayout frontmatter={entry.data} entry={entry}>
+<BlogPostLayout entry={entry}>
   <Content />
 </BlogPostLayout>

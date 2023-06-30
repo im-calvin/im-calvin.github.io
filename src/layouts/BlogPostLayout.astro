@@ -1,18 +1,37 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import SocialList from "../components/SideSocialList";
+import SideSocialList from "../components/SideSocialList";
+import SideEmail from "../components/SideEmail";
 import Layout from "./Layout.astro";
+import type { CollectionEntry } from "astro:content";
 import { collections } from "../content/config";
 
-// TODO intellisense with content
-const { frontmatter, entry } = Astro.props;
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+const { entry } = Astro.props;
+
+const frontmatter = entry.data;
+
+// format date
+const options = { year: "numeric", month: "long", day: "numeric" };
+const formattedDate = frontmatter.date.toLocaleDateString("en-US");
 ---
 
 <Layout title={`Blog • ${frontmatter.title}`}>
   <main>
     <Navbar />
-    {frontmatter.date}
-    {frontmatter.title}
+    <div class="hidden md:inline-block">
+      <SideSocialList />
+      <SideEmail />
+    </div>
+    <div class="text-3xl text-moona-darkPurple dark:text-moona-yellow">
+      {frontmatter.title}
+    </div>
+    <div class="my-5 text-sm text-opacity-80 dark:text-gray-300">
+      {formattedDate}
+    </div>
     <slot />
   </main>
 </Layout>
