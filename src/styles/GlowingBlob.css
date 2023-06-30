@@ -12,7 +12,8 @@
   top: 50%;
   translate: -50% -50%;
   border-radius: 50%;
-  @apply bg-gradient-to-r dark:from-moona-darkYellow dark:to-moona-lightYellow from-moona-purple to-anya-darkPurple;
+  @apply bg-gradient-to-r dark:from-moona-darkYellow dark:to-moona-lightYellow from-moona-darkYellow to-moona-darkYellow;
+  /* @apply hidden md:block; */
   animation: rotate 20s infinite;
   opacity: 0.2;
 }
