@@ -19,11 +19,12 @@ export default function MenuButton() {
       setState(open);
     };
 
-  const menuItem = (text: string, href: string) => {
+  const menuItem = (text: string, href: string, target?: string) => {
     return (
       <a
         className="cursor-pointer text-xl text-moona-black transition-colors duration-300 ease-in-out hover:text-moona-purple hover:underline dark:text-moona-white dark:hover:text-moona-purple"
         href={href}
+        target={target}
       >
         {text}
       </a>
@@ -58,8 +59,7 @@ export default function MenuButton() {
         <div className="flex h-full w-40 flex-col items-center justify-evenly gap-12 bg-moona-white p-4 pb-14 pt-32 dark:bg-anya-darkPurple dark:text-moona-white">
           {menuItem("Projects", "/projects")}
           {menuItem("Blog", "/blog")}
-          <div className="flex-grow" />
-          <ResumeButton />
+          {menuItem("Resume", "/resume.pdf", "_blank")}
         </div>
       </SwipeableDrawer>
     </>

@@ -10,24 +10,22 @@ export default function ProjectSelector() {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-5 ">
+      <div className="grid grid-cols-2 gap-5">
         <ProjectPreview
           title="3FA"
-          // description="A custom multi-factor authentication system for cloud storage."
           date="2023 / 03"
           onClick={() => setProjectLoaded(0)}
           selected={projectLoaded === 0}
         />
         <ProjectPreview
           title="Mittens"
-          // description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           date="2022 / 07"
           onClick={() => setProjectLoaded(1)}
           selected={projectLoaded === 1}
         />
       </div>
       <div className="my-5 w-full border border-anya-darkPurple dark:border-moona-yellow" />
-      <div className="relative">
+      <div className="relative ">
         <CSSTransition
           in={projectLoaded === 0}
           timeout={300} // Adjust the duration to match the CSS transition duration
@@ -58,7 +56,7 @@ export default function ProjectSelector() {
             ]}
             className={`transition-opacity duration-300 ease-out ${
               projectLoaded === 0 ? "opacity-100" : "opacity-0"
-            } absolute left-0 top-0 w-full`}
+            } absolute left-0 top-0 w-full `}
           />
         </CSSTransition>
         <CSSTransition
