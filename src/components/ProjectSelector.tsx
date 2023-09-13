@@ -4,6 +4,8 @@ import GithubIcon from "./icons/GithubIcon";
 import { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { CSSTransition } from "react-transition-group";
+import MittensImg from "../images/mittens.png";
+import AuthImage from "../images/3fa_preview.png";
 
 export default function ProjectSelector() {
   const [projectLoaded, setProjectLoaded] = useState<number>(0);
@@ -41,8 +43,7 @@ export default function ProjectSelector() {
             the underlying authentication system could be used for any
             application."
             technologies={["React", "Javascript", "Electron"]}
-            imgSrc="/3fa_preview.png"
-            imgSmSrc="/3fa_preview_sm.png"
+            img={AuthImage}
             imgLink="https://www.youtube.com/watch?v=EXM25gpxC9Y"
             icons={[
               <GithubIcon
@@ -77,8 +78,7 @@ export default function ProjectSelector() {
                 key="github"
               />,
             ]}
-            imgSrc="/mittens.png"
-            imgSmSrc="/mittens_sm.png"
+            img={MittensImg}
             className={`transition-opacity duration-300 ease-out ${
               projectLoaded === 1 ? "opacity-100" : "opacity-0"
             } absolute left-0 top-0 w-full`}
