@@ -56,7 +56,7 @@ export default function MenuButton() {
         onOpen={toggleDrawer(true)}
         sx={{ zIndex: 20 }}
       >
-        <div className="flex h-full w-40 flex-col items-center justify-evenly gap-12 bg-moona-white p-4 pb-14 pt-32 dark:bg-anya-darkPurple dark:text-moona-white">
+        <div className="flex h-full w-52 flex-col items-center gap-12 bg-moona-white p-4 pb-14 pt-28 dark:bg-anya-darkPurple dark:text-moona-white">
           {menuItem("Projects", "/projects")}
           {menuItem("Blog", "/blog")}
           {menuItem("Resume", "/resume.pdf", "_blank")}
