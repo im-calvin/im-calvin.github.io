@@ -55,6 +55,7 @@ import { ViewTransitions } from "astro:transitions";
           localStorage.setItem("theme", isDark ? "dark" : "light");
         };
 
+        // @ts-ignore (not a ts file)
         document
           .getElementById("themeToggle")
           .addEventListener("click", handleToggleClick);
