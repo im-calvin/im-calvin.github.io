@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!DOCTYPE html>
@@ -17,22 +18,18 @@ const { title } = Astro.props;
     <title>{title}</title>
     <script is:inline>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+      const isDark = localStorage.theme === "dark";
+
+      const theme = isDark === true ? "dark" : "";
+
+      document.querySelector("html").className = theme;
 
       /* query for md */
       const isMd = window.innerWidth >= 768;
 
       /* for stars */
       const root = document.documentElement;
-      const generateBoxShadow = (n: number): string => {
+      const generateBoxShadow = (n) => {
         let boxShadowValue = "";
         for (let i = 0; i < n; i++) {
           const x = Math.floor(Math.random() * window.innerWidth);
@@ -76,6 +73,7 @@ const { title } = Astro.props;
         attributeFilter: ["class"], // Only watch for changes in the class attribute
       });
     </script>
+    <ViewTransitions />
   </head>
   <body
     class="min-h-screen bg-moona-white text-moona-black dark:bg-anya-darkPurple dark:text-moona-white"
@@ -85,28 +83,27 @@ const { title } = Astro.props;
     <div id="stars3" class="h-3 w-3 bg-transparent"></div>
     <div id="blob" class="-z-10 blur-xl"></div>
     <slot />
-  </body>
+    <style is:global>
+      @import "../styles/stars.css";
 
-  <style is:global>
-    @import "../styles/stars.css";
-
-    html {
-      font-family: system-ui, sans-serif;
-      height: 100%;
-    }
-    /* tailwind md class */
-    @media (min-width: 768px) {
-      main {
-        max-width: 60%;
+      html {
+        font-family: system-ui, sans-serif;
+        height: 100%;
       }
-    }
-    main {
-      margin: auto;
-      padding: 1.5rem;
-    }
+      /* tailwind md class */
+      @media (min-width: 768px) {
+        main {
+          max-width: 60%;
+        }
+      }
+      main {
+        margin: auto;
+        padding: 1.5rem;
+      }
 
-    body {
-      @apply overflow-x-hidden;
-    }
-  </style>
+      body {
+        @apply overflow-x-hidden;
+      }
+    </style>
+  </body>
 </html>
