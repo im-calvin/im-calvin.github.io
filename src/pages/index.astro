@@ -5,28 +5,27 @@ import SideSocialList from "../components/SideSocialList";
 import SideEmail from "../components/SideEmail";
 import ArrowDown from "../components/ArrowDown";
 import TechnologyButton from "../components/TechnologyButton";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <Layout title="Kelvin Wong">
-  <main>
+  <div class="hidden md:inline-block">
+    <SideSocialList />
+    <SideEmail />
+  </div>
+  <main transition:animate="slide">
     <Navbar />
-    <div class="hidden md:inline-block">
-      <SideSocialList />
-      <SideEmail />
-    </div>
     <div class="min-h-[94vh]">
-      <div class="my-4 animate-[fall_200ms_ease-in-out] text-lg">
-        Hi, my name is
-      </div>
+      <div class="my-4 text-lg">Hi, my name is</div>
       <div
-        class="transform-all my-4 max-w-fit animate-[fall_400ms_ease-in-out] text-3xl font-bold text-anya-darkPurple duration-300 hover:text-4xl dark:text-moona-lightPurple"
+        class="transform-all my-4 max-w-fit text-3xl font-bold text-anya-darkPurple duration-300 hover:text-4xl dark:text-moona-lightPurple"
       >
         Kelvin Wong
       </div>
       <hr
-        class="my-4 w-40 animate-[fall_600ms_ease-in-out] border-2 border-moona-darkPurple dark:border-moona-yellow"
+        class="my-4 w-40 border-2 border-moona-darkPurple dark:border-moona-yellow"
       />
-      <div class="my-4 animate-[fall_800ms_ease-in-out] text-lg">
+      <div class="my-4 text-lg">
         I am an aspiring software engineer who is currently a 3rd year student
         at UBC in
         <div class="inline-block">
@@ -56,12 +55,12 @@ import TechnologyButton from "../components/TechnologyButton";
         </div>
       </div>
 
-      <div class="my-5 animate-[fall_1000ms_ease-in-out] text-lg">
+      <div class="my-5 text-lg">
         With an expertise in Typescript, React, and Python, I love designing and
         implementing web-based solutions, and I thrive in collaborative
         environments where I can tackle complex challenges.
       </div>
-      <div class="my-5 animate-[fall_1200ms_ease-in-out] text-lg">
+      <div class="my-5 text-lg">
         Outside of coding, I am fond of cats and find that they always brighten
         my day. You'll also find me bouldering, playing badminton and pool, and
         exploring the city for unique cafes where I can savour a cup of coffee.
