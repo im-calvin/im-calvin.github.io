@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
 const ThemeSwitch = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   // Function to toggle the theme
   const toggleTheme = () => {
@@ -15,8 +15,9 @@ const ThemeSwitch = () => {
   // On component mount, check the saved theme in localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    setIsDarkMode(savedTheme === "dark");
-    document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    const isDark = savedTheme === "dark";
+    setIsDarkMode(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
   }, []);
 
   return (
