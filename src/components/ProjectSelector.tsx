@@ -27,7 +27,7 @@ export default function ProjectSelector() {
         />
       </div>
       <div className="my-5 w-full border border-anya-darkPurple dark:border-moona-yellow" />
-      <div className="relative ">
+      <div className="relative">
         <CSSTransition
           in={projectLoaded === 0}
           timeout={300} // Adjust the duration to match the CSS transition duration
@@ -55,9 +55,6 @@ export default function ProjectSelector() {
                 <Icon icon="material-symbols:open-in-new" className="h-6 w-6" />
               </a>,
             ]}
-            className={`transition-opacity duration-300 ease-out ${
-              projectLoaded === 0 ? "opacity-100" : "opacity-0"
-            } absolute left-0 top-0 w-full `}
           />
         </CSSTransition>
         <CSSTransition

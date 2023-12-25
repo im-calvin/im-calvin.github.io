@@ -2,6 +2,11 @@ import { Icon } from "@iconify/react";
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import { useEffect, useState } from "react";
+import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 /* needs to include:
 - title
@@ -35,21 +40,29 @@ export default function ProjectExpanded({
 }: ProjectExpandedProps) {
   return (
     <>
-      <div className={`${className} pb-5 md:grid md:grid-cols-12 md:gap-5`}>
+      <div className={`${className}`}>
         {/* image */}
-        <div className="hidden h-[60vh] w-auto object-cover object-center text-right md:z-0 md:col-start-6 md:col-end-[-1] md:row-start-1 md:row-end-[-1] md:block">
-          <a href={imgLink} rel="noopener noreferrer" target="_blank">
+        <Swiper
+          pagination={{
+            dynamicBullets: true,
+          }}
+          navigation={true}
+          grabCursor={true}
+          modules={[Pagination, Navigation]}
+          className="lg:w-4/5"
+        >
+          <SwiperSlide className="flex items-center justify-center">
             <img
               src={img.src}
-              alt={`${title} preview `}
-              className={`left-0 top-0 h-full rounded-xl object-cover object-center brightness-50 grayscale`} // decide between cover and contain
-              width={1000}
-              height={1000}
+              alt={`${title} preview`}
+              className="w-full object-scale-down"
             />
-          </a>
-        </div>
+          </SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+        </Swiper>
         {/* text */}
-        <div className="relative z-10 flex flex-col md:col-start-1 md:col-end-8 md:row-start-1 md:row-end-[-1]">
+        {/* <div className="relative z-10 flex flex-col md:col-start-1 md:col-end-8 md:row-start-1 md:row-end-[-1]">
           <a
             href={titleLink}
             target="_blank"
@@ -83,7 +96,7 @@ export default function ProjectExpanded({
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
