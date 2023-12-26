@@ -1,7 +1,5 @@
 import { Icon } from "@iconify/react";
 import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
-import { useEffect, useState } from "react";
 import { Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
