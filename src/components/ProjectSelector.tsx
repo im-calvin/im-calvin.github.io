@@ -4,8 +4,10 @@ import GithubIcon from "./icons/GithubIcon";
 import { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { CSSTransition } from "react-transition-group";
-import MittensImg from "../images/mittens.png";
 import AuthImage from "../images/3fa_preview.png";
+import MittensScheduling from "../images/mittens/scheduling.png";
+import MittensCICD from "../images/mittens/cicd.png";
+import MittensDB from "../images/mittens/db.png";
 
 export default function ProjectSelector() {
   const [projectLoaded, setProjectLoaded] = useState<number>(0);
@@ -43,7 +45,7 @@ export default function ProjectSelector() {
             the underlying authentication system could be used for any
             application."
             technologies={["React", "Javascript", "Electron"]}
-            img={AuthImage}
+            imgs={[AuthImage]}
             imgLink="https://www.youtube.com/watch?v=EXM25gpxC9Y"
             icons={[
               <GithubIcon
@@ -53,6 +55,9 @@ export default function ProjectSelector() {
               />,
               <a href="https://3fa.netlify.app/">
                 <Icon icon="material-symbols:open-in-new" className="h-6 w-6" />
+              </a>,
+              <a href="https://www.youtube.com/watch?v=EXM25gpxC9Y">
+                <Icon icon="mdi:youtube" className="h-6 w-6" />
               </a>,
             ]}
           />
@@ -75,7 +80,7 @@ export default function ProjectSelector() {
                 key="github"
               />,
             ]}
-            img={MittensImg}
+            imgs={[MittensPreview, MittensScheduling, MittensCICD, MittensDB]}
             className={`transition-opacity duration-300 ease-out ${
               projectLoaded === 1 ? "opacity-100" : "opacity-0"
             } absolute left-0 top-0 w-full`}

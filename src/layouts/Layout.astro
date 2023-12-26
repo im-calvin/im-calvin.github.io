@@ -57,7 +57,7 @@ import { ViewTransitions } from "astro:transitions";
         let boxShadowValue = "";
         for (let i = 0; i < n; i++) {
           const x = Math.floor(Math.random() * window.innerWidth);
-          const y = Math.floor(Math.random() * 2000);
+          const y = Math.floor(Math.random() * window.innerHeight * 1.5);
           boxShadowValue += `${x}px ${y}px ${
             document.documentElement.classList.contains("dark")
               ? "#FFF"
