@@ -16,23 +16,15 @@ import { ViewTransitions } from "astro:transitions";
     <link rel="icon" type="image/svg+xml" href="src/images/calvin.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script>
+    <script is:inline>
       // Detect dark theme after ViewTransitions has finished
-      document.addEventListener("astro:after-swap", () => {
-        localStorage.theme === "dark"
-          ? document.documentElement.classList.add("dark")
-          : document.documentElement.classList.add("light");
-      });
-    </script>
-    <script>
-      // Set theme on page load, prevent flash of dark theme
-      document.addEventListener("astro:page-load", () => {
+      const setTheme = () => {
         const theme = (() => {
           if (
             typeof localStorage !== "undefined" &&
             localStorage.getItem("theme")
           ) {
-            return localStorage.getItem("theme") as "light" | "dark";
+            return localStorage.getItem("theme");
           }
           if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             return "dark";
@@ -46,8 +38,14 @@ import { ViewTransitions } from "astro:transitions";
           document.documentElement.classList.add("dark");
         }
 
-        window.localStorage.setItem("theme", theme);
-      });
+        window.localStorage.setItem("theme", theme || "light");
+      };
+
+      setTheme();
+
+      document.addEventListener("astro:after-swap", setTheme);
+      // Set theme on page load, prevent flash of dark theme
+      document.addEventListener("astro:page-load", setTheme);
     </script>
     <script>
       /* query for md */
@@ -102,7 +100,7 @@ import { ViewTransitions } from "astro:transitions";
     <ViewTransitions />
   </head>
   <body
-    class="min-h-screen bg-moona-white text-moona-black dark:bg-anya-darkPurple dark:text-moona-white"
+    class="min-h-screen overflow-y-scroll bg-moona-white text-moona-black dark:bg-anya-darkPurple dark:text-moona-white"
   >
     <div id="stars" class="h-1 w-1 bg-transparent"></div>
     <div id="stars2" class="h-2 w-2 bg-transparent"></div>
