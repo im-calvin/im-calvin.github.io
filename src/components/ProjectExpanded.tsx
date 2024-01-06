@@ -15,6 +15,11 @@ import "swiper/css/navigation";
 - description (resume bullet points)
 - technologies used
 */
+export interface GalleryImage {
+  img: ImageMetadata;
+  title: string;
+}
+
 interface ProjectExpandedProps {
   title: string;
   technologies: string[];
@@ -22,7 +27,8 @@ interface ProjectExpandedProps {
   icons: Array<any>; // TODO make this a type
   titleLink?: string;
   className?: string;
-  imgs: ImageMetadata[];
+  implementation: string[];
+  imgs: GalleryImage[];
   imgLink?: string;
 }
 
@@ -31,9 +37,8 @@ export default function ProjectExpanded({
   technologies,
   description,
   icons,
-  titleLink,
   className,
-  imgLink,
+  implementation,
   imgs,
 }: ProjectExpandedProps) {
   return (
@@ -48,15 +53,18 @@ export default function ProjectExpanded({
           navigation={true}
           grabCursor={true}
           modules={[Pagination, Navigation]}
-          className="lg:w-96; flex items-center justify-center xl:w-4/5"
+          className="flex items-center justify-center xl:w-4/5"
         >
           {imgs.map((img) => (
-            <SwiperSlide className="">
+            <SwiperSlide>
               <img
-                src={img.src}
+                src={img.img.src}
                 alt={`${title} preview`}
                 className="max-h-60vh w-full object-fill"
               />
+              <div className="absolute bottom-0 right-0 bg-moona-purple p-2 dark:bg-moona-lightPurple">
+                {img.title}
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -74,10 +82,17 @@ export default function ProjectExpanded({
             </span>
           </a> */}
           <div className="my-5 flex flex-grow items-center justify-center">
-            <p className=" dark:text-white  md:rounded-lg md:p-3 md:text-black md:shadow-gray-600">
-              {description}
+            <p className="flex flex-col dark:text-white md:rounded-lg md:p-3 md:text-black md:shadow-gray-600">
+              <>
+                {description}
+                <div className="pt-2 font-bold">How it works:</div>
+                {implementation.map((bullet) => {
+                  return <li>{bullet}</li>;
+                })}
+              </>
             </p>
           </div>
+
           <p className="flex flex-row flex-wrap">
             {technologies.map((technology, index) => (
               <span
