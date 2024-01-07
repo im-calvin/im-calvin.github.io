@@ -28,6 +28,20 @@ const { underline } = Astro.props;
         ></span></a
       >
     </div>
+    <div class="inline-block">
+      <a
+        href="/experience"
+        class={`${
+          underline === "experience"
+            ? "underline decoration-2 underline-offset-2 decoration-moona-purple dark:decoration-moona-yellow"
+            : "group transition duration-300"
+        } `}
+        >Experience
+        <span
+          class="-z-10 -mt-1 block h-0.5 max-w-0 bg-moona-darkPurple transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
+        ></span></a
+      >
+    </div>
     <!-- <div class="inline-block">
       <a
         href="/blog"
