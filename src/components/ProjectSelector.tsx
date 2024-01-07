@@ -139,12 +139,15 @@ export default function ProjectSelector() {
               <ProjectExpanded
                 title="Mittens"
                 titleLink="https://github.com/im-calvin/Mittens/"
-                description="A discord bot used to allow users to subscribe to YouTube channels and receive notifications when they put up new schedules and go live."
+                description="A discord bot which allow users to subscribe to YouTube channels and receive notifications when they put up new schedules or go live. Also helps users talk to foreign friends by translating messages in real-time, and can explain the meaning of specific words or phrases."
                 implementation={[
                   "YouTube API to fetch the channel and video information",
-                  "SQL database to store user subscriptions and the video schedules",
+                  "Interacts with SQL database through TypeORM to store user subscriptions and the video schedules",
                   "Jest for unit testing",
                   "GitHub Actions CI/CD pipeline automated build/deploy",
+                  "Deployed on home-server using Docker",
+                  "Live alerts using Sentry APM",
+                  "Fully typed using Typescript",
                 ]}
                 key={"mittens"}
                 technologies={[
@@ -160,6 +163,9 @@ export default function ProjectSelector() {
                     ariaLabel="Github"
                     key="github"
                   />,
+                  <a href="https://youtu.be/KJ-t610SwIQ">
+                    <Icon icon="mdi:youtube" className="h-6 w-6" />
+                  </a>,
                 ]}
                 imgs={Mittens}
               />

@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react";
 import type { ImageMetadata } from "astro";
 import { Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
