@@ -7,12 +7,12 @@ import SideEmail from "../components/SideEmail";
 ---
 
 <Layout title="Projects • Kelvin Wong">
-  <main>
+  <div class="hidden md:inline-block">
+    <SideSocialList />
+    <SideEmail />
+  </div>
+  <main transition:animate="slide">
     <Navbar underline="projects" />
-    <div class="hidden md:inline-block">
-      <SideSocialList />
-      <SideEmail />
-    </div>
     <h1 class="mb-5 text-3xl text-moona-darkPurple dark:text-moona-yellow">
       Projects
     </h1>

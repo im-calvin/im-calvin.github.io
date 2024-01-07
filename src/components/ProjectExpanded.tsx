@@ -1,6 +1,9 @@
-import { Icon } from "@iconify/react";
-import { useEffect, useState } from "react";
-import "lazysizes";
+import type { ImageMetadata } from "astro";
+import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 /* needs to include:
 - title
@@ -11,6 +14,11 @@ import "lazysizes";
 - description (resume bullet points)
 - technologies used
 */
+export interface GalleryImage {
+  img: ImageMetadata;
+  title: string;
+}
+
 interface ProjectExpandedProps {
   title: string;
   technologies: string[];
@@ -18,8 +26,8 @@ interface ProjectExpandedProps {
   icons: Array<any>; // TODO make this a type
   titleLink?: string;
   className?: string;
-  imgSrc: string;
-  imgSmSrc: string;
+  implementation: string[];
+  imgs: GalleryImage[];
   imgLink?: string;
 }
 
@@ -28,53 +36,42 @@ export default function ProjectExpanded({
   technologies,
   description,
   icons,
-  titleLink,
   className,
-  imgSrc,
-  imgSmSrc,
-  imgLink,
+  implementation,
+  imgs,
 }: ProjectExpandedProps) {
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-
-  useEffect(() => {
-    const img = document.querySelector(".lazyload");
-
-    // once img loads, set isLoaded to true
-    if (img) {
-      img.addEventListener("lazyloaded", () => {
-        setIsLoaded(true);
-      });
-    }
-
-    // cleanup
-    return () => {
-      if (img) {
-        img.removeEventListener("lazyloaded", () => {
-          setIsLoaded(true);
-        });
-      }
-    };
-  }, []);
-
   return (
     <>
-      <div className={`${className} pb-5 md:grid md:grid-cols-12 md:gap-5`}>
+      <div className={`${className}`}>
         {/* image */}
-        <div className="hidden h-[60vh] w-auto object-cover object-center text-right md:z-0 md:col-start-6 md:col-end-[-1] md:row-start-1 md:row-end-[-1] md:block">
-          <a href={imgLink} rel="noopener noreferrer" target="_blank">
-            <img
-              src={imgSmSrc}
-              data-src={imgSrc}
-              alt={`${title} preview `}
-              className={`lazyload left-0 top-0 h-full rounded-xl object-cover object-center ${
-                isLoaded ? "" : "blur-sm"
-              } brightness-50 grayscale`} // decide between cover and contain
-            />
-          </a>
-        </div>
+        <Swiper
+          key={title}
+          pagination={{
+            dynamicBullets: true,
+          }}
+          slidesPerView={"auto"}
+          spaceBetween={50}
+          navigation={true}
+          grabCursor={true}
+          modules={[Pagination, Navigation]}
+          className="flex items-center justify-center xl:w-4/5"
+        >
+          {imgs.map((img) => (
+            <SwiperSlide key={img.title}>
+              <img
+                src={img.img.src}
+                alt={`${title} preview`}
+                className="max-h-60vh w-full object-fill"
+              />
+              <div className="absolute bottom-0 right-0 bg-moona-purple p-2 dark:bg-moona-lightPurple">
+                {img.title}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
         {/* text */}
         <div className="relative z-10 flex flex-col md:col-start-1 md:col-end-8 md:row-start-1 md:row-end-[-1]">
-          <a
+          {/* <a
             href={titleLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -84,13 +81,20 @@ export default function ProjectExpanded({
             <span className="mx-1 inline-flex items-center transition-all group-hover:-translate-y-1 group-hover:translate-x-1">
               <Icon icon="iconoir:arrow-tl" rotate={1} className="h-3 w-3" />
             </span>
-          </a>
+          </a> */}
           <div className="my-5 flex flex-grow items-center justify-center">
-            <p className=" md:rounded-lg md:bg-gray-800 md:p-3 md:text-white md:shadow-gray-600">
-              {description}
-            </p>
+            <div className="flex flex-col dark:text-white md:rounded-lg md:p-3 md:text-black md:shadow-gray-600">
+              <>
+                {description}
+                <div className="pt-2 font-bold">How it works:</div>
+                {implementation.map((bullet) => {
+                  return <li key={bullet}>{bullet}</li>;
+                })}
+              </>
+            </div>
           </div>
-          <p className="flex flex-row flex-wrap md:max-w-[23vw]">
+
+          <div className="flex flex-row flex-wrap">
             {technologies.map((technology, index) => (
               <span
                 className="my-1 mr-5 rounded-2xl border border-moona-darkPurple bg-moona-purple/[0.3] px-4 py-1 dark:border-moona-white dark:bg-moona-lightPurple/[0.3]"
@@ -99,10 +103,13 @@ export default function ProjectExpanded({
                 {technology}
               </span>
             ))}
-          </p>
+          </div>
           <div className="my-5 flex flex-row">
-            {icons.map((icon) => (
-              <span className="mr-5 h-6 w-6 transition-colors hover:text-moona-purple dark:hover:text-moona-yellow">
+            {icons.map((icon, i) => (
+              <span
+                className="mr-5 h-6 w-6 transition-colors hover:text-moona-purple dark:hover:text-moona-yellow"
+                key={i}
+              >
                 {icon}
               </span>
             ))}

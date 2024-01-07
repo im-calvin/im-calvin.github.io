@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!DOCTYPE html>
@@ -12,31 +13,51 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Kelvin Wong's personal site." />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/calvin.png" />
+    <link rel="icon" type="image/svg+xml" href="src/images/calvin.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+    <script is:inline>
+      // Detect dark theme after ViewTransitions has finished
+      const setTheme = () => {
+        const theme = (() => {
+          if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+          ) {
+            return localStorage.getItem("theme");
+          }
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          }
+          return "light";
+        })();
 
+        if (theme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.add("dark");
+        }
+
+        window.localStorage.setItem("theme", theme || "light");
+      };
+
+      setTheme();
+
+      document.addEventListener("astro:after-swap", setTheme);
+      // Set theme on page load, prevent flash of dark theme
+      document.addEventListener("astro:page-load", setTheme);
+    </script>
+    <script>
       /* query for md */
       const isMd = window.innerWidth >= 768;
 
       /* for stars */
       const root = document.documentElement;
-      const generateBoxShadow = (n: number): string => {
+      const generateBoxShadow = (n: number) => {
         let boxShadowValue = "";
         for (let i = 0; i < n; i++) {
           const x = Math.floor(Math.random() * window.innerWidth);
-          const y = Math.floor(Math.random() * 2000);
+          const y = Math.floor(Math.random() * window.innerHeight * 1.5);
           boxShadowValue += `${x}px ${y}px ${
             document.documentElement.classList.contains("dark")
               ? "#FFF"
@@ -76,37 +97,37 @@ const { title } = Astro.props;
         attributeFilter: ["class"], // Only watch for changes in the class attribute
       });
     </script>
+    <ViewTransitions />
   </head>
   <body
-    class="min-h-screen bg-moona-white text-moona-black dark:bg-anya-darkPurple dark:text-moona-white"
+    class="min-h-screen overflow-y-scroll bg-moona-white text-moona-black dark:bg-anya-darkPurple dark:text-moona-white"
   >
     <div id="stars" class="h-1 w-1 bg-transparent"></div>
     <div id="stars2" class="h-2 w-2 bg-transparent"></div>
     <div id="stars3" class="h-3 w-3 bg-transparent"></div>
     <div id="blob" class="-z-10 blur-xl"></div>
     <slot />
-  </body>
+    <style is:global>
+      @import "../styles/stars.css";
 
-  <style is:global>
-    @import "../styles/stars.css";
-
-    html {
-      font-family: system-ui, sans-serif;
-      height: 100%;
-    }
-    /* tailwind md class */
-    @media (min-width: 768px) {
-      main {
-        max-width: 60%;
+      html {
+        font-family: system-ui, sans-serif;
+        height: 100%;
       }
-    }
-    main {
-      margin: auto;
-      padding: 1.5rem;
-    }
+      /* tailwind md class */
+      @media (min-width: 768px) {
+        main {
+          max-width: 50%;
+        }
+      }
+      main {
+        margin: auto;
+        padding: 1.5rem;
+      }
 
-    body {
-      @apply overflow-x-hidden;
-    }
-  </style>
+      body {
+        @apply overflow-x-hidden;
+      }
+    </style>
+  </body>
 </html>
