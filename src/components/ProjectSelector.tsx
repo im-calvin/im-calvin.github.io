@@ -12,7 +12,6 @@ import MittensDB from "../images/mittens/db.png";
 
 import { type GalleryImage } from "./ProjectExpanded";
 
-
 // 3fa images
 import ThreeFA1 from "../images/3fa/1.png";
 import ThreeFA2 from "../images/3fa/2.png";
@@ -117,6 +116,7 @@ export default function ProjectSelector() {
                   "Raspberry Pi",
                 ]}
                 imgs={ThreeFAs}
+                key={"3fa"}
                 imgLink="https://www.youtube.com/watch?v=EXM25gpxC9Y"
                 icons={[
                   <GithubIcon
@@ -146,6 +146,7 @@ export default function ProjectSelector() {
                   "Jest for unit testing",
                   "GitHub Actions CI/CD pipeline automated build/deploy",
                 ]}
+                key={"mittens"}
                 technologies={[
                   "Typescript",
                   "Node.js",
@@ -160,7 +161,7 @@ export default function ProjectSelector() {
                     key="github"
                   />,
                 ]}
-                imgs={[MittensScheduling, MittensDB]}
+                imgs={Mittens}
               />
             )}
           </CSSTransition>
