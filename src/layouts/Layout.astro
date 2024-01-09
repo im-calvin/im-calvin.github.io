@@ -5,6 +5,7 @@ export interface Props {
 
 const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
+import BgStars from "../components/BgStars";
 ---
 
 <!DOCTYPE html>
@@ -47,69 +48,14 @@ import { ViewTransitions } from "astro:transitions";
       // Set theme on page load, prevent flash of dark theme
       document.addEventListener("astro:page-load", setTheme);
     </script>
-    <script>
-      /* query for md */
-      const isMd = window.innerWidth >= 768;
-
-      /* for stars */
-      const root = document.documentElement;
-      const generateBoxShadow = (n: number) => {
-        let boxShadowValue = "";
-        for (let i = 0; i < n; i++) {
-          const x = Math.floor(Math.random() * window.innerWidth);
-          const y = Math.floor(Math.random() * window.innerHeight * 1.5);
-          boxShadowValue += `${x}px ${y}px ${
-            document.documentElement.classList.contains("dark")
-              ? "#FFF"
-              : "#BDACE3"
-          }, `;
-        }
-        return boxShadowValue.slice(0, -2); // Remove the trailing comma and space
-      };
-
-      const handleThemeChange = () => {
-        if (isMd) {
-          // If desktop
-          var boxShadowSmall = generateBoxShadow(700);
-          var boxShadowMedium = generateBoxShadow(300);
-          var boxShadowBig = generateBoxShadow(100);
-        } else {
-          // If mobile
-          var boxShadowSmall = generateBoxShadow(100);
-          var boxShadowMedium = generateBoxShadow(50);
-          var boxShadowBig = generateBoxShadow(25);
-        }
-
-        root.style.setProperty("--box-shadow-small", boxShadowSmall);
-        root.style.setProperty("--box-shadow-medium", boxShadowMedium);
-        root.style.setProperty("--box-shadow-big", boxShadowBig);
-      };
-
-      // Update stars immediately when theme is toggled
-      document.addEventListener("DOMContentLoaded", () => {
-        handleThemeChange();
-      });
-      window.addEventListener("resize", handleThemeChange);
-
-      const classListObserver = new MutationObserver(handleThemeChange);
-      classListObserver.observe(document.documentElement, {
-        attributes: true, // Watch for attribute changes
-        attributeFilter: ["class"], // Only watch for changes in the class attribute
-      });
-    </script>
     <ViewTransitions />
   </head>
   <body
     class="min-h-screen overflow-y-scroll bg-moona-white text-moona-black dark:bg-anya-darkPurple dark:text-moona-white"
   >
-    <div id="stars" class="h-1 w-1 bg-transparent"></div>
-    <div id="stars2" class="h-2 w-2 bg-transparent"></div>
-    <div id="stars3" class="h-3 w-3 bg-transparent"></div>
-    <div id="blob" class="-z-10 blur-xl"></div>
+    <BgStars client:only="react" />
     <slot />
     <style is:global>
-      @import "../styles/stars.css";
-
       html {
         font-family: system-ui, sans-serif;
         height: 100%;
