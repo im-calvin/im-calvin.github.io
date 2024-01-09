@@ -2,13 +2,13 @@ import { useRef, useEffect } from "react";
 import * as THREE from "three";
 
 export default function BgStars() {
-  const STAR_DENSITY = 0.1;
+  const STAR_DENSITY = 0.2;
   const CAMERA_FOV = 60;
   const CAMERA_NEAR_LIMIT = 1;
   const CAMERA_FAR_LIMIT = 1000;
   const STAR_Z_MIN = 500;
   const STAR_Z_MAX = 1000;
-  const LIGHT_STAR_COLOR = 0x000000; // using moona-purple
+  const LIGHT_STAR_COLOR = 0xbdace3; // using moona-purple
   const DARK_STAR_COLOR = 0xffffff;
 
   const camera = new THREE.PerspectiveCamera(
@@ -37,7 +37,7 @@ export default function BgStars() {
     camera.aspect = window.innerWidth / window.innerHeight;
     renderer.setSize(window.innerWidth, window.innerHeight);
   };
-  const starColor = useRef<number>(DARK_STAR_COLOR);
+  const starColor = useRef<THREE.Color>(new THREE.Color(LIGHT_STAR_COLOR));
   const geometry = new THREE.BufferGeometry();
   const setSpheres = () => {
     // const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
@@ -66,7 +66,7 @@ export default function BgStars() {
     const points = new THREE.Points(
       geometry,
       new THREE.PointsMaterial({
-        size: 3,
+        size: 4,
         transparent: true,
         vertexColors: true,
         opacity: 0.7,
@@ -76,14 +76,21 @@ export default function BgStars() {
   };
   const applyStarColor = () => {
     const numVertices = geometry.attributes.position.count;
-    geometry.setAttribute(
-      "color",
-      new THREE.BufferAttribute(
-        new Float32Array(numVertices * 3).map(() => starColor.current),
-        3
-      )
-    );
+
+    // Create a Float32Array to store the color values for each vertex
+    const colors = new Float32Array(numVertices * 3);
+
+    // Set the color values for each vertex
+    for (let i = 0; i < numVertices; i++) {
+      colors[i * 3] = starColor.current.r; // red component
+      colors[i * 3 + 1] = starColor.current.g; // green component
+      colors[i * 3 + 2] = starColor.current.b; // blue component
+    }
+
+    // Set the color attribute of the geometry
+    geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
   };
+
   const animateStars = () => {
     const Y_THRESHOLD = window.innerHeight / 2;
     const vertices = geometry.attributes.position.array;
@@ -106,7 +113,9 @@ export default function BgStars() {
     // if (!e.find((f) => f.target === document.documentElement)) return;
     if (!geometry.attributes.position) return;
     const isDark = document.documentElement.classList.contains("dark");
-    starColor.current = isDark ? DARK_STAR_COLOR : LIGHT_STAR_COLOR;
+    starColor.current = isDark
+      ? new THREE.Color(DARK_STAR_COLOR)
+      : new THREE.Color(LIGHT_STAR_COLOR);
     applyStarColor();
   };
 
