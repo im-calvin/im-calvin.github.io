@@ -63,7 +63,7 @@ export default function ProjectExpanded({
                 alt={`${title} preview`}
                 className="max-h-60vh w-full object-fill"
               />
-              <div className="absolute bottom-0 right-0 bg-moona-purple p-2 dark:bg-moona-lightPurple">
+              <div className="absolute bottom-0 right-0 bg-moona-purple p-2 dark:bg-moona-lightPurple dark:text-black">
                 {img.title}
               </div>
             </SwiperSlide>
