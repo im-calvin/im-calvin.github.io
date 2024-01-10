@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SwipeableDrawer } from "@mui/material";
 import ResumeButton from "./ResumeButton";
 import { Icon } from "@iconify/react";
+import Hamburger from "hamburger-react";
 
 export default function MenuButton() {
   const [state, setState] = useState(false);
@@ -34,22 +35,16 @@ export default function MenuButton() {
   return (
     <>
       <button className="z-30 hover:text-moona-purple">
-        {state ? (
-          // close button if sidebar is open
-          <Icon
-            icon="ic:round-close"
-            onClick={toggleDrawer(false)}
-            className="h-8 w-8 cursor-pointer"
-          />
-        ) : (
-          <Icon
-            icon="gg:menu-right"
-            className="h-8 w-8 cursor-pointer"
-            onClick={toggleDrawer(true)}
-          />
-        )}
+        <Hamburger toggled={state} toggle={setState} size={24} />
       </button>
-      <SwipeableDrawer
+      {state && (
+        <div className="flex h-full w-52 flex-col items-center gap-12 bg-moona-white p-4 pb-14 pt-28 dark:bg-anya-darkPurple dark:text-moona-white">
+          {menuItem("Projects", "/projects")}
+          {menuItem("Experience", "/experience")}
+          {menuItem("Resume", "/resume.pdf", "_blank")}
+        </div>
+      )}
+      {/* <SwipeableDrawer
         anchor={"right"}
         open={state}
         onClose={toggleDrawer(false)}
@@ -59,10 +54,9 @@ export default function MenuButton() {
         <div className="flex h-full w-52 flex-col items-center gap-12 bg-moona-white p-4 pb-14 pt-28 dark:bg-anya-darkPurple dark:text-moona-white">
           {menuItem("Projects", "/projects")}
           {menuItem("Experience", "/experience")}
-          {/* {menuItem("Blog", "/blog")} */}
           {menuItem("Resume", "/resume.pdf", "_blank")}
         </div>
-      </SwipeableDrawer>
+      </SwipeableDrawer> */}
     </>
   );
 }

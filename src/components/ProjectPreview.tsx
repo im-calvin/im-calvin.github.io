@@ -20,7 +20,7 @@ export default function ProjectPreview({
   return (
     <>
       <button
-        className={`card relative inline-block h-fit rounded border first-letter:cursor-pointer ${
+        className={`card relative inline-block rounded border first-letter:cursor-pointer ${
           selected
             ? "border-anya-darkPurple dark:border-moona-yellow"
             : "border-moona-darkPurple dark:border-moona-purple"
