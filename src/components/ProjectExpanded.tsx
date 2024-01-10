@@ -23,7 +23,7 @@ interface ProjectExpandedProps {
   title: string;
   technologies: string[];
   description: string;
-  icons: Array<any>; // TODO make this a type
+  icons?: Array<any>; // TODO make this a type
   titleLink?: string;
   className?: string;
   implementation: string[];
@@ -105,14 +105,15 @@ export default function ProjectExpanded({
             ))}
           </div>
           <div className="my-5 flex flex-row">
-            {icons.map((icon, i) => (
-              <span
-                className="mr-5 h-6 w-6 transition-colors hover:text-moona-purple dark:hover:text-moona-yellow"
-                key={i}
-              >
-                {icon}
-              </span>
-            ))}
+            {icons &&
+              icons.map((icon, i) => (
+                <span
+                  className="mr-5 h-6 w-6 transition-colors hover:text-moona-purple dark:hover:text-moona-yellow"
+                  key={i}
+                >
+                  {icon}
+                </span>
+              ))}
           </div>
         </div>
       </div>

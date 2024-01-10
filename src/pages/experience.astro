@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import SideSocialList from "../components/SideSocialList";
 import SideEmail from "../components/SideEmail";
+import ProjectSelector from "../components/ProjectSelector";
 ---
 
 <Layout title="Experience • Kelvin Wong">
@@ -15,5 +16,6 @@ import SideEmail from "../components/SideEmail";
     <h1 class="mb-5 text-3xl text-moona-darkPurple dark:text-moona-yellow">
       Experience
     </h1>
+    <ProjectSelector client:load />
   </main>
 </Layout>
