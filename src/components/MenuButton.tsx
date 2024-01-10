@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { SwipeableDrawer } from "@mui/material";
-import ResumeButton from "./ResumeButton";
 import { Icon } from "@iconify/react";
+import { Drawer } from "vaul";
 
 export default function MenuButton() {
   const [state, setState] = useState(false);
@@ -33,7 +32,7 @@ export default function MenuButton() {
 
   return (
     <>
-      <button className="z-30 hover:text-moona-purple">
+      {/* <button className="z-30 hover:text-moona-purple">
         {state ? (
           // close button if sidebar is open
           <Icon
@@ -48,21 +47,23 @@ export default function MenuButton() {
             onClick={toggleDrawer(true)}
           />
         )}
-      </button>
-      <SwipeableDrawer
-        anchor={"right"}
-        open={state}
-        onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
-        sx={{ zIndex: 20 }}
-      >
-        <div className="flex h-full w-52 flex-col items-center gap-12 bg-moona-white p-4 pb-14 pt-28 dark:bg-anya-darkPurple dark:text-moona-white">
-          {menuItem("Projects", "/projects")}
-          {menuItem("Experience", "/experience")}
-          {/* {menuItem("Blog", "/blog")} */}
-          {menuItem("Resume", "/resume.pdf", "_blank")}
-        </div>
-      </SwipeableDrawer>
+      </button> */}
+      <Drawer.Root>
+        <Drawer.Trigger asChild>
+          <Icon icon="gg:menu" className="h-8 w-8 cursor-pointer" />
+        </Drawer.Trigger>
+        <Drawer.Portal>
+          <Drawer.Overlay className="fixed inset-0 bg-black/40" />
+          <Drawer.Content className="fixed bottom-0 left-0 right-0 z-30 mt-36 flex flex-col rounded-t-[10px]">
+            <div className="flex h-full flex-1 flex-col items-center justify-center gap-12 rounded-t-[10px] bg-moona-white p-4 dark:bg-anya-darkPurple dark:text-moona-white">
+              {menuItem("Projects", "/projects")}
+              {menuItem("Experience", "/experience")}
+              {/* {menuItem("Blog", "/blog")} */}
+              {menuItem("Resume", "/resume.pdf", "_blank")}
+            </div>
+          </Drawer.Content>
+        </Drawer.Portal>
+      </Drawer.Root>
     </>
   );
 }
