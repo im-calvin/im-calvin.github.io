@@ -55,11 +55,11 @@ export default function MenuButton() {
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
         sx={{ zIndex: 20 }}
-        className="md: hidden"
       >
         <div className="flex h-full w-52 flex-col items-center gap-12 bg-moona-white p-4 pb-14 pt-28 dark:bg-anya-darkPurple dark:text-moona-white">
           {menuItem("Projects", "/projects")}
-          {menuItem("Blog", "/blog")}
+          {menuItem("Experience", "/experience")}
+          {/* {menuItem("Blog", "/blog")} */}
           {menuItem("Resume", "/resume.pdf", "_blank")}
         </div>
       </SwipeableDrawer>
