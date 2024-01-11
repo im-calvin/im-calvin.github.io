@@ -32,7 +32,7 @@ export default function MenuButton() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="flex flex-col items-center justify-center gap-4 bg-moona-white  dark:bg-anya-darkPurple dark:text-moona-white"
+              className="flex flex-col items-center justify-center gap-4  bg-transparent dark:text-moona-white"
             >
               <ul className="grid gap-2">
                 {routes.map((item, idx) => (
