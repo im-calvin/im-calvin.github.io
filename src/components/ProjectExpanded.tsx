@@ -23,7 +23,7 @@ interface ProjectExpandedProps {
   title: string;
   technologies: string[];
   description: string;
-  icons?: Array<any>; // TODO make this a type
+  icons?: Array<React.JSX.Element>;
   titleLink?: string;
   className?: string;
   implementation: string[];
