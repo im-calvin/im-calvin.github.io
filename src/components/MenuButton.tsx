@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Hamburger from "hamburger-react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,18 +12,6 @@ export default function MenuButton() {
       "mobilemenu"
     ) as HTMLElement;
   }, []);
-
-  const menuItem = (text: string, href: string, target?: string) => {
-    return (
-      <a
-        className="cursor-pointer text-xl text-moona-black transition-colors duration-300 ease-in-out hover:text-moona-purple hover:underline dark:text-moona-white dark:hover:text-moona-purple"
-        href={href}
-        target={target}
-      >
-        {text}
-      </a>
-    );
-  };
 
   const routes = [
     { title: "Projects", href: "/projects" },
@@ -62,7 +50,9 @@ export default function MenuButton() {
                   >
                     <a
                       onClick={() => setOpen((prev) => !prev)}
-                      className={"flex w-full items-center justify-between p-5"}
+                      className={
+                        "flex w-full cursor-pointer items-center justify-between p-5 text-xl text-moona-black transition-colors duration-300 ease-in-out hover:text-moona-purple hover:underline dark:text-moona-white dark:hover:text-moona-purple"
+                      }
                       href={item.href}
                       target={item.target}
                     >
