@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import Hamburger from "hamburger-react";
+import { Squash as Hamburger } from "hamburger-react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
