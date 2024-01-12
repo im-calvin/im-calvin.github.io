@@ -46,7 +46,6 @@ export default function ExperienceSelector() {
             key={projectLoaded}
             timeout={300} // Adjust the duration to match the CSS transition duration
             classNames="fade"
-            unmountOnExit
           >
             {renderSwitch(projectLoaded)}
           </CSSTransition>

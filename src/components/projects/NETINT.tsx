@@ -17,7 +17,7 @@ export default function NETINT() {
         "Used OpenAI/Google Gemini API to link internal models",
         "Used LangChain and other open-source AI tools to enhance data integration with internal tools",
         "Applied retrival augmentation techniques such as chunking, vectorization, and sentence window retrieval to improve model performance",
-        "Worked with team leads to understand core eeds and implement tools to improve efficiency",
+        "Worked with team leads to understand core needs and implement tools to improve efficiency",
       ]}
       key={"netint"}
       technologies={["Langchain", "RAG", "OpenAI", "Python"]}
