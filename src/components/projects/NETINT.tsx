@@ -9,12 +9,18 @@ export default function NETINT() {
 
   return (
     <ProjectExpanded
-      title="AI Developer @NETINT"
+      title="NETINT"
       titleLink="https://netint.com/"
-      description="Lorem ipsum."
-      implementation={["Lorem ipsum"]}
+      description="Working on internal tools to improve developer efficiency through generative AI."
+      implementation={[
+        "Developed Python functions to consolidate internal data sources",
+        "Used OpenAI/Google Gemini API to link internal models",
+        "Used LangChain and other open-source AI tools to enhance data integration with internal tools",
+        "Applied retrival augmentation techniques such as chunking, vectorization, and sentence window retrieval to improve model performance",
+        "Worked with team leads to understand core eeds and implement tools to improve efficiency",
+      ]}
       key={"netint"}
-      technologies={["Lorem ipsum"]}
+      technologies={["Langchain", "RAG", "OpenAI", "Python"]}
       imgs={NETINTGallery}
     />
   );
