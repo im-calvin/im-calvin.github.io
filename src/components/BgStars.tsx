@@ -66,7 +66,7 @@ export default function BgStars() {
     const points = new THREE.Points(
       geometry,
       new THREE.PointsMaterial({
-        size: 4,
+        size: 3,
         transparent: true,
         vertexColors: true,
         opacity: 0.7,

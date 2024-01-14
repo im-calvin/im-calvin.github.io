@@ -1,0 +1,16 @@
+---
+const { href, title, target } = Astro.props;
+---
+
+<div class="inline-block">
+  <a
+    href={href}
+    target={target}
+    class="group text-moona-darkPurple transition duration-300 dark:text-moona-yellow"
+  >
+    {title}
+    <span
+      class="-mt-1 block h-0.5 max-w-0 bg-moona-darkPurple transition-all duration-500 group-hover:max-w-full dark:bg-moona-yellow"
+    ></span>
+  </a>
+</div>

@@ -1,6 +1,7 @@
 import type { ImageMetadata } from "astro";
 import { Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Icon } from "@iconify/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -23,7 +24,7 @@ interface ProjectExpandedProps {
   title: string;
   technologies: string[];
   description: string;
-  icons: Array<any>; // TODO make this a type
+  icons?: Array<React.JSX.Element>;
   titleLink?: string;
   className?: string;
   implementation: string[];
@@ -34,6 +35,7 @@ interface ProjectExpandedProps {
 export default function ProjectExpanded({
   title,
   technologies,
+  titleLink,
   description,
   icons,
   className,
@@ -63,7 +65,7 @@ export default function ProjectExpanded({
                 alt={`${title} preview`}
                 className="max-h-60vh w-full object-fill"
               />
-              <div className="absolute bottom-0 right-0 bg-moona-purple p-2 dark:bg-moona-lightPurple">
+              <div className="absolute bottom-0 right-0 bg-moona-purple p-2 dark:bg-moona-lightPurple dark:text-black">
                 {img.title}
               </div>
             </SwiperSlide>
@@ -71,17 +73,17 @@ export default function ProjectExpanded({
         </Swiper>
         {/* text */}
         <div className="relative z-10 flex flex-col md:col-start-1 md:col-end-8 md:row-start-1 md:row-end-[-1]">
-          {/* <a
+          <a
             href={titleLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex w-fit flex-row transition duration-200 hover:text-moona-purple dark:hover:text-moona-yellow"
+            className="group flex w-fit flex-row pt-2 transition duration-200 hover:text-moona-purple dark:hover:text-moona-yellow"
           >
             <span className="text-3xl">{title}</span>
             <span className="mx-1 inline-flex items-center transition-all group-hover:-translate-y-1 group-hover:translate-x-1">
               <Icon icon="iconoir:arrow-tl" rotate={1} className="h-3 w-3" />
             </span>
-          </a> */}
+          </a>
           <div className="my-5 flex flex-grow items-center justify-center">
             <div className="flex flex-col dark:text-white md:rounded-lg md:p-3 md:text-black md:shadow-gray-600">
               <>
@@ -105,14 +107,15 @@ export default function ProjectExpanded({
             ))}
           </div>
           <div className="my-5 flex flex-row">
-            {icons.map((icon, i) => (
-              <span
-                className="mr-5 h-6 w-6 transition-colors hover:text-moona-purple dark:hover:text-moona-yellow"
-                key={i}
-              >
-                {icon}
-              </span>
-            ))}
+            {icons &&
+              icons.map((icon, i) => (
+                <span
+                  className="mr-5 h-6 w-6 transition-colors hover:text-moona-purple dark:hover:text-moona-yellow"
+                  key={i}
+                >
+                  {icon}
+                </span>
+              ))}
           </div>
         </div>
       </div>

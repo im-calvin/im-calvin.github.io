@@ -4,20 +4,20 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import "../styles/fade.css";
 
-import Mittens from "./projects/Mittens";
-import ThreeFA from "./projects/ThreeFA";
+import ARIS from "./projects/ARIS";
+import NETINT from "./projects/NETINT";
 
-export default function ProjectSelector() {
-  const [projectLoaded, setProjectLoaded] = useState<"3fa" | "mittens">(
-    "mittens"
+export default function ExperienceSelector() {
+  const [projectLoaded, setProjectLoaded] = useState<"aris" | "netint">(
+    "netint"
   );
 
   const renderSwitch = (projectLoaded: string) => {
     switch (projectLoaded) {
-      case "3fa":
-        return ThreeFA;
-      case "mittens":
-        return Mittens;
+      case "aris":
+        return ARIS;
+      case "netint":
+        return NETINT;
       default:
         throw new Error("Invalid project loaded");
     }
@@ -27,16 +27,16 @@ export default function ProjectSelector() {
     <>
       <div className="grid grid-cols-2 gap-5">
         <ProjectPreview
-          title="Mittens"
-          date="2022 / 07 - Present"
-          onClick={() => setProjectLoaded("mittens")}
-          selected={projectLoaded === "mittens"}
+          title="AI Developer @NETINT"
+          date="2024 / 01 - Present"
+          onClick={() => setProjectLoaded("netint")}
+          selected={projectLoaded === "netint"}
         />
         <ProjectPreview
-          title="3FA"
-          date="2023 / 03"
-          onClick={() => setProjectLoaded("3fa")}
-          selected={projectLoaded === "3fa"}
+          title="Software Developer @ ARIS"
+          date="2023 / 05 - 2023 / 10"
+          onClick={() => setProjectLoaded("aris")}
+          selected={projectLoaded === "aris"}
         />
       </div>
       <div className="my-5 w-full border border-anya-darkPurple dark:border-moona-yellow" />
@@ -46,7 +46,6 @@ export default function ProjectSelector() {
             key={projectLoaded}
             timeout={300} // Adjust the duration to match the CSS transition duration
             classNames="fade"
-            unmountOnExit
           >
             {renderSwitch(projectLoaded)}
           </CSSTransition>

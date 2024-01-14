@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import SideSocialList from "../components/SideSocialList";
+import SideEmail from "../components/SideEmail";
+import ExperienceSelector from "../components/ExperienceSelector";
+---
+
+<Layout title="Experience • Kelvin Wong">
+  <div class="hidden md:inline-block">
+    <SideSocialList />
+    <SideEmail />
+  </div>
+  <main transition:animate="slide">
+    <Navbar underline="experience" />
+    <h1 class="mb-5 text-3xl text-moona-darkPurple dark:text-moona-yellow">
+      Experience
+    </h1>
+    <ExperienceSelector client:load />
+  </main>
+</Layout>
