@@ -16,6 +16,7 @@ export default function MenuButton() {
   const routes = [
     { title: "Projects", href: "/projects" },
     { title: "Experience", href: "/experience" },
+    { title: "Hackathons", href: "/hackathons" },
     { title: "Resume", href: "/Kelvin_Wong_Resume.pdf", target: "_blank" },
   ];
 
