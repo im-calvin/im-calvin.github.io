@@ -2,7 +2,7 @@ import type IconInterface from "../../utils/IconInterface";
 
 export default function ResumeIcon({ href, ariaLabel }: IconInterface) {
   return (
-    <a href="/resume.pdf" target="_blank" rel="noreferrer">
+    <a href="/Kelvin_Wong_Resume.pdf" target="_blank" rel="noreferrer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
