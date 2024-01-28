@@ -18,15 +18,15 @@ export default function BThere() {
     },
     {
       img: login,
-      title: "Authenticated login",
+      title: "Authenticated login using Firebase",
     },
     {
       img: history,
-      title: "Conversation history",
+      title: "Conversation history with a friend",
     },
     {
       img: video,
-      title: "Video preview",
+      title: "Video preview after uploading a video",
     },
     {
       img: nwpic,

@@ -28,22 +28,22 @@ export default function ProjectSelector() {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
         <ProjectPreview
-          title="BThere"
-          date="2024 / 01"
+          title="Second Place"
+          date="nwHacks | 2024 / 01"
           onClick={() => setProjectLoaded("bthere")}
           selected={projectLoaded === "bthere"}
         />
         <ProjectPreview
-          title="Cosona"
-          date="2023 / 11"
+          title="Spotlight Winner"
+          date="Cohere Hackathon | 2023 / 11"
           onClick={() => setProjectLoaded("cosona")}
           selected={projectLoaded === "cosona"}
         />
         <ProjectPreview
-          title="Organic Chemistry Bot"
-          date="2022 / 09"
+          title="First Overall & Best Beginner Hack"
+          date="Hack to School | 2022 / 09"
           onClick={() => setProjectLoaded("ochembot")}
           selected={projectLoaded === "ochembot"}
         />
