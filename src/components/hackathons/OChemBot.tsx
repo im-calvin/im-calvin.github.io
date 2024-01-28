@@ -9,7 +9,7 @@ export default function OChemBot() {
 
   return (
     <ProjectExpanded
-      title="Organic Chemistry Bot"
+      title="Organic Chemistry Bot - First Overall & Best Beginner Hack"
       titleLink="https://devpost.com/software/hack-to-school-project"
       description="Helped students learn organic chemistry IUPAC names in a fun and interactive way by having users compete with each other to name the compound first. We supported 4 different difficulties and had a global leaderboard to track the top users."
       implementation={[

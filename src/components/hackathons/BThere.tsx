@@ -4,12 +4,39 @@ import { Icon } from "@iconify/react";
 import ProjectExpanded from "../ProjectExpanded";
 import { type GalleryImage } from "../ProjectExpanded";
 
+import login from "../../images/bthere/login.jpg";
+import upload from "../../images/bthere/upload.jpg";
+import video from "../../images/bthere/video.jpg";
+import history from "../../images/bthere/history.jpg";
+import nwpic from "../../images/bthere/nwpic.jpg";
+
 export default function BThere() {
-  const BThereGallery: GalleryImage[] = [];
+  const BThereGallery: GalleryImage[] = [
+    {
+      img: upload,
+      title: "Home page",
+    },
+    {
+      img: login,
+      title: "Authenticated login",
+    },
+    {
+      img: history,
+      title: "Conversation history",
+    },
+    {
+      img: video,
+      title: "Video preview",
+    },
+    {
+      img: nwpic,
+      title: "Picture of the team",
+    },
+  ];
 
   return (
     <ProjectExpanded
-      title="BThere"
+      title="BThere - nwHacks 2024 Runner Up"
       titleLink="https://devpost.com/software/bthere-hobi6k"
       description="Helped people be a better friend to their friends by analyzing video conversations and providing suggestions for users to connect with their friends on a deeper level."
       implementation={[

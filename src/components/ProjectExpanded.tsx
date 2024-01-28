@@ -47,6 +47,7 @@ export default function ProjectExpanded({
       <div className={`${className}`}>
         {/* image */}
         <Swiper
+        autoHeight={true}
           key={title}
           pagination={{
             dynamicBullets: true,
