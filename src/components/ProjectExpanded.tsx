@@ -47,6 +47,7 @@ export default function ProjectExpanded({
       <div className={`${className}`}>
         {/* image */}
         <Swiper
+          autoHeight={true}
           key={title}
           pagination={{
             dynamicBullets: true,
@@ -63,7 +64,7 @@ export default function ProjectExpanded({
               <img
                 src={img.img.src}
                 alt={`${title} preview`}
-                className="max-h-60vh w-full object-fill"
+                className="max-h-60vh w-full rounded-md object-fill"
               />
               <div className="absolute bottom-0 right-0 bg-moona-purple p-2 dark:bg-moona-lightPurple dark:text-black">
                 {img.title}
@@ -77,7 +78,7 @@ export default function ProjectExpanded({
             href={titleLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex w-fit flex-row pt-2 transition duration-200 hover:text-moona-purple dark:hover:text-moona-yellow"
+            className="group flex flex-row justify-center pt-3 transition duration-200 hover:text-moona-purple dark:hover:text-moona-yellow"
           >
             <span className="text-3xl">{title}</span>
             <span className="mx-1 inline-flex items-center transition-all group-hover:-translate-y-1 group-hover:translate-x-1">

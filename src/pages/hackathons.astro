@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import SideSocialList from "../components/SideSocialList";
+import SideEmail from "../components/SideEmail";
+import HackathonSelector from "../components/hackathons/HackathonSelector";
+---
+
+<Layout title="Hackathons • Kelvin Wong">
+  <div class="hidden md:inline-block">
+    <SideSocialList />
+    <SideEmail />
+  </div>
+  <main transition:animate="slide">
+    <Navbar underline="hackathons" />
+    <h1 class="mb-5 text-3xl text-moona-darkPurple dark:text-moona-yellow">
+      Hackathons
+    </h1>
+    <HackathonSelector client:load />
+  </main>
+</Layout>
