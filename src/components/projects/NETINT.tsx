@@ -13,15 +13,25 @@ export default function NETINT() {
       titleLink="https://netint.com/"
       description="Working on internal tools to improve developer efficiency through generative AI."
       implementation={[
-        "Contributed extensively to Chatbot-UI, an open-source AI chat app with support for RAG and many LLM models",
-        "Developed Python functions to consolidate internal data sources",
-        "Used OpenAI/Google Gemini API to link internal models",
-        "Used LangChain and other open-source AI tools to enhance data integration with internal tools",
-        "Applied retrieval augmentation techniques such as chunking, vectorization, and sentence window retrieval to improve model performance",
-        "Worked with team leads to understand core needs and implement tools to improve efficiency",
+        "Developed comprehensive documentation for self-hosting open source project Chatbot-UI integrated with a self-hosted Supabase/Postgres database",
+        "Built, deployed, presented, and trained employees on internal productivity tools",
+        "Worked with team leads to understand core needs and implement specific tools to improve efficiency",
+        "Implemented OAuth with Microsoft Entra for single sign-on, significantly reducing user sign-up friction",
+        "Developed a scalable proxy for managing API keys, featuring usage logging, cost tracking, and automatic key deactivation",
+        "Created a sandbox management platform for secure code execution in isolated Docker environments",
+        "Developed a web app allowing users to upload, script, and execute code directly from the browser",
       ]}
       key={"netint"}
-      technologies={["Langchain", "RAG", "OpenAI", "Python"]}
+      technologies={[
+        "React",
+        "Typescript",
+        "Docker",
+        "Supabase",
+        "Postgres",
+        "Redis",
+        "RAG",
+        "Python",
+      ]}
       imgs={NETINTGallery}
     />
   );

@@ -28,7 +28,7 @@ export default function ExperienceSelector() {
       <div className="grid grid-cols-2 gap-5">
         <ProjectPreview
           title="AI Developer @NETINT"
-          date="2024 / 01 - Present"
+          date="2024 / 01 - 2024 / 04"
           onClick={() => setProjectLoaded("netint")}
           selected={projectLoaded === "netint"}
         />
