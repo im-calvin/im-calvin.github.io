@@ -46,10 +46,14 @@ export default function ThreeFA() {
       titleLink="https://www.youtube.com/watch?v=EXM25gpxC9Y"
       description="A 3-Factor-Authentication app that uses a combination of password, facial recognition, and gesture-based passwords to authenticate users to access their cloud storage platform."
       implementation={[
-        "Users interact with the client app built in Electron, which captures gesture sequences via a Raspberry Pico and a picture via a webcam.",
-        "The client app then sends the gesture sequences to the server, which recognizes motion in 7 axes using an accelerometer and gyroscope.",
-        "The client app also sends the picture to the server, which uses a CNN to recognize the user's face.",
-        "The server then sends a JWT token to the client app, which is used to authenticate the user for the duration of the session.",
+        "Client app built with Electron",
+        "Raspberry Pico with accelerometer and gyroscope to capture motion sequences",
+        "Encrypted communications between clients and the server",
+        "Custom CNN network to recognize user's face",
+        "Admin dashboard to view login attempts",
+        "Postman for API testing",
+        "Indexed database for image blob storage",
+        "Regression tests and builds with Github Actions",
       ]}
       technologies={[
         "React",

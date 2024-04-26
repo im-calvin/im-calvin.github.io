@@ -13,7 +13,7 @@ export default function ARIS() {
       titleLink="https://arisenv.ca/"
       description="Developed SaaS platform for a Canadian environmental consulting firm to help improve customers' efficiency in calculating specific scenarios for environmental compliance."
       implementation={[
-        "Advocated for Docker image deployment to deliver cloud service on Azure Serverless functions within a deadline of 2 weeks",
+        "Dockerized the application to streamline development and deployment processes",
         "Spearheaded automated testing with Pytest and Bitbucket Pipelines with 80% code coverage",
         "Overhauled build and deployment process to Microsoft Azure",
         "Updated legacy code written in Fortran to Python",
