@@ -22,6 +22,7 @@ export default function ARIS() {
       key={"aris"}
       technologies={["Python", "Docker", "Azure", "Bitbucket"]}
       imgs={ARISGallery}
+      subtitle="Notable Achievements:"
     />
   );
 }

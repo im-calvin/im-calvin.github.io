@@ -1,4 +1,4 @@
 export default interface IconInterface {
-  href: string;
-  ariaLabel: string;
+  href?: string;
+  ariaLabel?: string;
 }

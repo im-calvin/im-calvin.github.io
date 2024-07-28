@@ -33,6 +33,7 @@ export default function NETINT() {
         "Python",
       ]}
       imgs={NETINTGallery}
+      subtitle="Notable Achievements:"
     />
   );
 }

@@ -16,23 +16,25 @@ import Link from "../components/TextLink.astro";
   <main transition:animate="slide">
     <Navbar />
     <div class="min-h-[94vh]">
-      <div class="my-4 text-lg">Hi, my name is</div>
-      <div
+      <h3 class="my-4 text-lg">Hi, my name is</h3>
+      <h1
         class="transform-all my-4 max-w-fit text-3xl font-bold text-anya-darkPurple duration-300 hover:text-4xl dark:text-moona-lightPurple"
       >
         Kelvin Wong
-      </div>
+      </h1>
       <hr
         class="my-4 w-40 border-2 border-moona-darkPurple dark:border-moona-yellow"
       />
       <div class="my-4 text-lg">
-        I am an aspiring software engineer who is currently a 3rd year student
-        at UBC in
+        I am a software engineer who is currently a 4th year student at UBC in
         <Link
           target="_blank"
           href="https://ece.ubc.ca"
           title="computer engineering"
-        />. Currently, I am interning as an AI developer at
+        />. I am currently interning at
+        <Link target="_blank" href="https://amazon.com" title="Amazon" /> on the
+        North American Payments team. I've previously also interned as an AI developer
+        at
         <Link
           target="_blank"
           href="https://netint.ca"
@@ -53,7 +55,7 @@ import Link from "../components/TextLink.astro";
         itch.
       </div>
 
-      <div class="my-5 text-lg">
+      <!-- <div class="my-5 text-lg">
         Since then, I have been working on <Link
           href="/projects"
           title="projects"
@@ -67,7 +69,7 @@ import Link from "../components/TextLink.astro";
           href="https://github.com/mckaywrigley/chatbot-ui"
           title="Chatbot-UI"
         />.
-      </div>
+      </div> -->
 
       <div class="my-5 text-lg">
         Outside of coding, I am fond of cats and find that they always brighten

@@ -17,7 +17,11 @@ export default function MenuButton() {
     { title: "Projects", href: "/projects" },
     { title: "Experience", href: "/experience" },
     { title: "Hackathons", href: "/hackathons" },
-    { title: "Resume", href: "/Kelvin_Wong_Resume.pdf", target: "_blank" },
+    {
+      title: "Resume",
+      href: "https://papermark.io/view/clz50ba8f00028oqex9thgcpl",
+      target: "_blank",
+    },
   ];
 
   return (

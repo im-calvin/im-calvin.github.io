@@ -15,20 +15,20 @@ import { type GalleryImage } from "../ProjectExpanded";
 export default function ThreeFA() {
   const ThreeFAGallery: GalleryImage[] = [
     {
-      img: ThreeFA1,
-      title: "Login with camera capture",
-    },
-    {
-      img: ThreeFA2,
-      title: "Successful login to cloud storage",
+      img: ThreeFA4,
+      title: "Block diagram for communication between hardware and software",
     },
     {
       img: ThreeFA3,
       title: "Database schema",
     },
     {
-      img: ThreeFA4,
-      title: "Block diagram for communication between hardware and software",
+      img: ThreeFA1,
+      title: "Login with camera capture",
+    },
+    {
+      img: ThreeFA2,
+      title: "Successful login to cloud storage",
     },
     {
       img: ThreeFA5,
@@ -83,6 +83,7 @@ export default function ThreeFA() {
           <Icon icon="mdi:youtube" className="h-6 w-6" />
         </a>,
       ]}
+      subtitle="How it works:"
     />
   );
 }

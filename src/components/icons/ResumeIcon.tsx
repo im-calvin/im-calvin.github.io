@@ -1,8 +1,10 @@
-import type IconInterface from "../../utils/IconInterface";
-
-export default function ResumeIcon({ href, ariaLabel }: IconInterface) {
+export default function ResumeIcon() {
   return (
-    <a href="/Kelvin_Wong_Resume.pdf" target="_blank" rel="noreferrer">
+    <a
+      href="https://papermark.io/view/clz50ba8f00028oqex9thgcpl"
+      target="_blank"
+      rel="noreferrer"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

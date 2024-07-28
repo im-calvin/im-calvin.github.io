@@ -52,6 +52,7 @@ export default function Mittens() {
         </a>,
       ]}
       imgs={MittensGallery}
+      subtitle="How it works:"
     />
   );
 }

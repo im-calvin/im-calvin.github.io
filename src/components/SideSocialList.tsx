@@ -16,7 +16,7 @@ export default function SocialList() {
           />
         </li>
         <li className="my-5 transition-transform ease-in-out hover:translate-y-[-3px] hover:text-moona-purple focus:translate-y-[-3px] focus:text-moona-purple dark:hover:text-moona-darkYellow dark:focus:text-moona-purple">
-          <ResumeIcon href="/Kelvin_Wong_Resume.pdf" ariaLabel="Resume" />
+          <ResumeIcon />
         </li>
       </ul>
       <div className="m-0 h-20 w-px border border-moona-purple dark:border-moona-yellow" />

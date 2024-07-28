@@ -30,6 +30,7 @@ interface ProjectExpandedProps {
   implementation: string[];
   imgs: GalleryImage[];
   imgLink?: string;
+  subtitle: string;
 }
 
 export default function ProjectExpanded({
@@ -41,6 +42,7 @@ export default function ProjectExpanded({
   className,
   implementation,
   imgs,
+  subtitle
 }: ProjectExpandedProps) {
   return (
     <>
@@ -89,7 +91,7 @@ export default function ProjectExpanded({
             <div className="flex flex-col dark:text-white md:rounded-lg md:p-3 md:text-black md:shadow-gray-600">
               <>
                 {description}
-                <div className="pt-2 font-bold">How it works:</div>
+                <div className="pt-2 font-bold">{subtitle}</div>
                 {implementation.map((bullet) => {
                   return <li key={bullet}>{bullet}</li>;
                 })}
